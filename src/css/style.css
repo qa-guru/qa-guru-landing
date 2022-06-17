@@ -1,0 +1,35 @@
+@import 'defs/fonts';
+@import 'defs/nullstyle';
+@import 'defs/defs';
+@import 'schemes/main';
+
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+.hidden {
+	display: none;
+}
+
+/* FOR DEV */
+/* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	position: relative;
+	span {
+		position: absolute;
+		display: block;
+		padding: 0.1em 0.25em;
+		transform: translateX(-100%);
+		transform-origin: -50% -50%;
+		border: 1px solid var(--c-second-1);
+		color: var(--c-main-2);
+		top: -0.2em;
+		left: -0.5rem;
+	}
+} */
+

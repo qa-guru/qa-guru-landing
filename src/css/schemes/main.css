@@ -1,0 +1,72 @@
+:root {
+	scroll-behavior: smooth;
+	/* Main colors */
+	--c-brand: #00aaff;
+	--c-main-1: #002233;
+	--c-main-2: #365463;
+	--c-bg: #dfe8ec;
+	--c-second-1: #fcfdfd;
+	--c-second-1-tr: #fcfdfd00;
+	--c-second-2: #e7ecef;
+	--c-second-3: #d1dbe0;
+	--c-second-4: #95a8b1;
+	--shadow-1-color: #0022334d;
+	--shadow-2-color: #00000036;
+	--border-radius: 0.85rem;
+	--border-radius-light: 0.25rem;
+	--c-light: #00000026;
+
+	/* Accent colors */
+	--c-green: #37d73a;
+	--c-red: #fa3600;
+	--c-orange: #f0a505;
+	--c-yellow: #d9eb37;
+	--c-pink: #8136a1;
+
+	--c-lightbox-bg: #000000db;
+
+	/* Other */
+	--shadow-none: 0 0 0 0 var(--shadow-1-color);
+	--shadow-1: 0px 0.25rem 1rem 0px var(--shadow-1-color);
+	--shadow-2: inset 0 1px 1px var(--shadow-2-color);
+	--transition-in: 0.25s ease-in;
+	--transition-out: 0.15s ease-out;
+
+	::selection {
+		color: var(--c-bg);
+		background: var(--c-brand);
+	}
+
+	::-webkit-scrollbar {
+		width: 0.6rem;
+	}
+	::-webkit-scrollbar-track {
+		background: var(--c-second-1);
+	}
+	::-webkit-scrollbar-thumb {
+		background-color: var(--c-second-4);
+	}
+
+	&.dark {
+		/* Main colors */
+		--c-brand: #2b6380;
+		--c-main-1: #d3dbde;
+		--c-main-2: #a1a7aa;
+		--c-bg: #171a1c;
+		--c-second-1: #22282a;
+		--c-second-1-tr: #22282a00;
+		--c-second-2: #303436;
+		--c-second-3: #3d4143;
+		--c-second-4: #4a5254;
+		--shadow-1-color: #d8d3e41c;
+		--shadow-2-color: #ffffff42;
+		--c-light: #ffffff0d;
+
+		/* Accent colors */
+		--c-green: #245225;
+		--c-red: #5c1805;
+		--c-orange: #584722;
+		--c-yellow: #8a9150;
+		--c-pink: #411952;
+	}
+}
