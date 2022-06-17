@@ -1,69 +1,32 @@
-*,
-*:before,
-*:after {
-	box-sizing: border-box;
-	padding: 0;
-	margin: 0;
-	border: 0;
-}
-
-:focus,
-:active,
-a:focus,
-a:active {
-	outline: none;
-}
-
 html,
 body {
-	height: 100%;
-	font-size: 100%;
-	line-height: 1;
-	-webkit-text-size-adjust: 100%;
+	min-height: 100vh;
 }
 body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.gc-main-content,
+.lite-page {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	flex: 1 1;
+}
+.lite-page {
+	justify-content: space-between;
+}
+.lite-page > * {
+	flex: 0 1;
+}
+.lt-block {
 	width: 100%;
 }
-
-input,
-button,
-textarea {
-	font-family: inherit;
-}
-
-input::-ms-clear {
-	display: none;
-}
-
-button,
-a {
-	cursor: pointer;
-}
-
-button::-moz-focus-inner {
-	padding: 0;
-	border: 0;
-}
-
-ul li {
-	list-style: none;
-}
-
-img,
-figure,
-picture > object {
-	max-width: 100%;
-	height: auto;
-}
-a {
-	text-decoration: none;
-	color: inherit;
-
-	&:focus,
-	&:hover,
-	&:active,
-	&:visited {
-		text-decoration: none;
-		color: inherit;
-	}
+/* .lt-block:nth-child(4) {
+	flex: 1 1;
+} */
+.lt-block:nth-child(2) {
+	flex: 1 1;
 }

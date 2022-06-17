@@ -1,6 +1,11 @@
+/* Getcourse delault styles */
+@import 'defs/superlite-block';
+
 @import 'defs/fonts';
 @import 'defs/nullstyle';
 @import 'defs/defs';
+
+
 @import 'schemes/main';
 
 
@@ -33,3 +38,6 @@ h6 {
 	}
 } */
 
+body * {
+	font-family: 'Montserrat', sans-serif!important;
+}
