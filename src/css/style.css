@@ -5,9 +5,8 @@
 @import 'defs/nullstyle';
 @import 'defs/defs';
 
-
 @import 'schemes/main';
-
+@import 'main';
 
 /* @tailwind base;
 @tailwind components;
@@ -37,7 +36,3 @@ h6 {
 		left: -0.5rem;
 	}
 } */
-
-body * {
-	font-family: 'Montserrat', sans-serif!important;
-}

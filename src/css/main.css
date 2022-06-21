@@ -1,0 +1,73 @@
+.gc-main-content .lite-page {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	color: var(--c-black) var(--c-bg);
+
+	.main-header {
+		box-shadow: var(--shadow);
+	}
+	.main-footer {
+		background: var(--c-white);
+	}
+	.main-header,
+	.main-footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		gap: calc(2.77rem * var(--c));
+		align-items: center;
+		line-height: 1;
+		height: calc(7.8888rem * var(--c));
+		padding: 0 var(--side-padding);
+
+		&__logo {
+			svg {
+				height: calc(1.6666rem * var(--c));
+				width: auto;
+			}
+		}
+		&__menu {
+			margin: 0;
+			padding: 0;
+			ul {
+				display: flex;
+				margin-bottom: 0;
+				list-style-type: none;
+				padding-inline-start: 0;
+				gap: calc(2.77rem * var(--c));
+			}
+			a {
+				padding: 0.55em 0;
+			}
+		}
+		&__login {
+			a {
+				padding: 0.55em 0;
+			}
+		}
+		&__questions {
+			display: flex;
+			flex-direction: column;
+			gap: 0.666em;
+		}
+	}
+	.container-std {
+		padding: 0 var(--side-padding);
+		margin: var(--content-indents) 0;
+	}
+	a {
+		&.has-arrow {
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+		}
+	}
+
+	svg {
+		&.arrow-min {
+			width: 1em;
+		}
+	}
+}
