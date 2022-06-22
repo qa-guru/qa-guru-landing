@@ -1,0 +1,53 @@
+@font-face {
+	font-family: 'qa-guru-icon';
+
+	src: url('../files/fonts/qa-guru-icon.eot?40w0b9');
+	src: url('../files/fonts/qa-guru-icon.eot?40w0b9#iefix')
+			format('embedded-opentype'),
+		url('../files/fonts/qa-guru-icon.ttf?40w0b9') format('truetype'),
+		url('../files/fonts/qa-guru-icon.woff?40w0b9') format('woff'),
+		url('../files/fonts/qa-guru-icon.svg?40w0b9#qa-guru-icon') format('svg');
+
+	/* src: url('https://fs.getcourse.ru/fileservice/file/download/a/159627/sc/251/h/ade8efa960c8c77832a27a4a691e237d.eot?40w0b9');
+	src: url('https://fs.getcourse.ru/fileservice/file/download/a/159627/sc/251/h/ade8efa960c8c77832a27a4a691e237d.eot?40w0b9#iefix')
+			format('embedded-opentype'),
+		url('https://fs.getcourse.ru/fileservice/file/download/a/159627/sc/187/h/6433b377adb72d6bfe41a7ae4051972b.ttf?40w0b9')
+			format('truetype'),
+		url('https://fs.getcourse.ru/fileservice/file/download/a/159627/sc/106/h/2efab7a06888d5da169be13626492554.woff?40w0b9')
+			format('woff'),
+		url('https://fs.getcourse.ru/fileservice/file/download/a/159627/sc/239/h/7ad90bdd6760572a8bd2de4fd101a488.svg?40w0b9#qa-guru-icon')
+			format('svg'); */
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+.iqa,
+.need-arrow:after {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'qa-guru-icon' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.iqa-arrow-sm:after,
+.need-arrow.sm:after {
+	content: '\e900';
+	transform: rotate(-90deg);
+	margin-left: 0.35em;
+	min-width: 0.65em;
+}
+.iqa-arrow-md:after {
+	content: '\e901';
+}
+.iqa-arrow-lg:after {
+	content: '\e902';
+}

@@ -1,3 +1,7 @@
+.hidden {
+	display: none;
+}
+
 /* Адаптивность */
 @custom-media --lg (max-width: 1600px);
 @custom-media --md (max-width: 852px);
@@ -5,12 +9,11 @@
 
 :root {
 	--side-padding: 204px;
-	--content-indents: 48px;
-	font-size: 18px;
-	line-height: 1.66666;
+	--content-indents: calc(52px * var(--c));
+	--font-size: 18px;
+	--line-height: 1.66666;
 	--c: 1;
 	@media (--lg) {
-		--side-padding: 200px;
 		--c: 0.85;
 	}
 }
@@ -23,22 +26,13 @@ overflow-x: hidden;
 margin-right: calc(-1 * (100vw - 100%));
 } */
 
+html,
 body {
-	/* font-family: 'Montserrat', sans-serif;
-	font-style: normal;
-	font-weight: 400;
-	font-size: 18px;
-	line-height: 1.66666;
-	color: var(--c-black) var(--c-bg); */
+	font-size: var(--font-size);
+}
 
-	/* @media (max-width: 1280px) {
-		font-size: 0.9rem;
-	}
-	@media (max-width: 760px) {
-		font-size: 0.82rem;
-	}
-
-	&.not-webp {
+body {
+	/* &.not-webp {
 		picture > source[type*='webp'] {
 			display: none;
 		}
@@ -46,11 +40,21 @@ body {
 }
 
 .gc-main-content .lite-page {
+	font-family: 'Montserrat', sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	color: var(--c-black) var(--c-bg);
+	line-height: var(--line-height);
 	a,
 	a:focus,
 	a:active,
 	a:hover {
 		color: inherit;
 		text-decoration: none;
+		transition: color var(--transition);
+	}
+	a:hover {
+		color: var(--c-brand);
 	}
 }

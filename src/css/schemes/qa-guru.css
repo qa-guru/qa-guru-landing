@@ -1,11 +1,12 @@
 :root {
 	scroll-behavior: smooth;
 	/* Main colors */
-	--c-brand: #2CCCA6;
+	--c-brand: #2ccca6;
 	--c-black: #000000;
 	--c-bg: #f9f9f9;
 	--c-white: #ffffff;
 	--c-gray: #505153;
 	--shadow: 0px 1px 13px rgba(218, 219, 216, 0.35);
+	--transition: 0.25s ease-in;
 
 }
