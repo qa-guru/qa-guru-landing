@@ -9,6 +9,9 @@
 @import 'main';
 @import 'icons';
 
+
+@import 'elements/start-composition.css';
+
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */

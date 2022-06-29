@@ -1,0 +1,21 @@
+<svg class="start-composition__right2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.71 347.53">
+	<path d="M0,51.5,307.42,0l5.48,29.54L0,82.47Z" />
+	<rect y="62.85" width="223.63" height="284.68" />
+	<rect class="white" x="60.7" y="89.4" width="151.47" height="213.52" />
+	<path d="M96.15,102.26,332.71,82.37V314.43L96.15,293.65Z" />
+	<path class="green" d="M162.81,198.09l134.52,2.36v15l-137.7-2.42Z" />
+	<path class="c" d="M261.53,198.8,251,216.7" />
+	<path class="c" d="M273.53,198.26l-10,17.69" />
+	<path class="c" d="M283.47,198.12l-9.74,17.48" />
+	<path class="gray" d="M86.81,231l202.36,4.19v15.65l-206.4-4.25Z" />
+	<path class="c" d="M212.13,233.28l-9.66,16.44" />
+	<path class="c" d="M224.84,232.74,214,250.66" />
+	<path class="c" d="M235.29,231.81l-11,19.05" />
+	<path class="gray" d="M71.2,259.42l114.41,1.09v16.22L67.85,273.46Z" />
+	<path class="c" d="M140.29,258.69l-10.07,17.84" />
+	<path class="c" d="M151.25,258.68l-9.66,17.15" />
+	<path class="c" d="M162,259.31,152,277" /><text class="e" transform="translate(118.33 148.57)">
+		<tspan class="text">Карьерное</tspan>
+		<tspan class="text" x="0" y="20">консультирование</tspan>
+	</text>
+</svg>

@@ -1,0 +1,86 @@
+.start-composition {
+	&__top,
+	&__bottom {
+		display: flex;
+		justify-content: center;
+	}
+	&__top {
+		gap: 41px;
+	}
+	&__bottom {
+		gap: 27px;
+		margin-top: -30px;
+		width: calc(100% - 19px);
+	}
+	svg {
+		flex: 1 1 45%;
+		.black {
+			fill: var(--c-black);
+		}
+		.green {
+			fill: var(--c-brand);
+		}
+		.white {
+			fill: var(--c-white);
+		}
+		.gray {
+			fill: var(--c-gray);
+		}
+	}
+	&__left {
+		.white2 {
+			fill: none;
+			stroke: var(--c-white);
+			stroke-width: 0.5px;
+		}
+		.text {
+			font-size: 1rem;
+			font-weight: 700;
+		}
+		.text tspan {
+			font-size: 0.8333rem;
+			font-weight: 400;
+		}
+		.letters {
+			font-size: 0.888888rem;
+			font-weight: 400;
+		}
+	}
+	&__right {
+		.stroke1 {
+			fill: var(--c-white);
+			stroke: var(--c-black);
+		}
+		circle {
+			fill: #333333;
+		}
+	}
+	&__left2 {
+		line {
+			fill: none;
+			stroke: #000;
+		}
+
+		text {
+			font-size: 15px;
+			font-family: Montserrat-Regular, Montserrat;
+		}
+
+		.five-k {
+			font-size: 2.222rem;
+			font-weight: 700;
+		}
+	}
+	&__right2 {
+		.c {
+			fill: none;
+			stroke: var(--c-black);
+			stroke-width: 3px;
+		}
+		.text {
+			font-size: 1rem;
+			font-weight: 600;
+			fill: var(--c-white);
+		}
+	}
+}

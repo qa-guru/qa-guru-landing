@@ -1,0 +1,22 @@
+<svg class="start-composition__left2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 312">
+	<path d="M9.42,9.79,371,31.09V283.6L1,311.77Z" />
+	<path class="green" d="M12.48.16,383.4,19.81V279.09L12.48,298.89Z" />
+	<line class="b" x1="92.63" y1="239.03" x2="351.98" y2="239.03" />
+	<line class="b" x1="92.63" y1="199.03" x2="351.98" y2="199.03" />
+	<line class="b" x1="92.63" y1="159.03" x2="351.98" y2="159.03" />
+	<line class="b" x1="92.63" y1="119.03" x2="351.98" y2="119.03" /><text class="c"
+		transform="translate(188.81 50.32)">Профессиональное
+		<tspan class="f" x="0" y="15">комьюнити</tspan>
+	</text><text class="c" transform="translate(41.42 117.62)">
+		<tspan class="g">2022</tspan>
+	</text><text class="c" transform="translate(44.53 159.29)">
+		<tspan class="g">2021</tspan>
+	</text><text class="c" transform="translate(40.07 199.06)">
+		<tspan class="g">2020</tspan>
+	</text><text class="i" transform="translate(43.91 237.53)">2019
+	</text><text class="five-k" transform="translate(60.85 63.18)">5к +</text>
+	<image x="111" y="87"
+		href="https://fs.getcourse.ru/fileservice/file/download/a/159627/sc/444/h/1b2cce8343ded7f58e8c31f4b86bcfdf.png"
+		height="150" width="231" />
+
+</svg>

@@ -10,16 +10,20 @@
 		width: fit-content;
 	}
 	a.button,
-	button {
+	button,
+	.btn.f-btn.button-md {
 		border-radius: 0;
 		border: none;
-		color: var(--c-white) var(--c-black);
+		color: var(--c-white) var(--c-black)!important;
 		font-family: inherit;
 		padding: calc(10px * var(--c)) calc(48px * var(--c));
 		transition: var(--transition);
 		transition-property: color, background-color;
+		min-height: unset;
+		font-size: 1rem;
+		font-weight: 400;
 		&:hover {
-			color: var(--c-black) var(--c-brand);
+			color: var(--c-black) var(--c-brand)!important;
 		}
 	}
 	svg {
