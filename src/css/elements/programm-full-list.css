@@ -1,0 +1,8 @@
+.gc-main-content .lite-page {
+	.programm-full-list {
+		position: absolute;
+		&.active {
+			display: block;
+		}
+	}
+}

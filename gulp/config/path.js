@@ -17,7 +17,7 @@ export const path = {
 	src: {
 		js: `${srcFolder}/js/app.js`,
 		jsFast: `${srcFolder}/js/fast-scripts.js`,
-		css: `${srcFolder}/css/style.css`,
+		css: `${srcFolder}/css/{style,fast,defs/superlite-block}.css`,
 		html: `${srcFolder}/*.{html,pug,php,ico}`,
 		images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
 		imagesVariants: `${srcFolder}/img/`,

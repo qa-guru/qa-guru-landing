@@ -1,5 +1,5 @@
 /* Getcourse delault styles */
-@import 'defs/superlite-block';
+/* @import 'defs/superlite-block'; */
 
 @import 'schemes/qa-guru';
 @import 'defs/nullstyle';
@@ -10,7 +10,8 @@
 @import 'icons';
 
 
-@import 'elements/start-composition.css';
+@import 'elements/start-composition';
+@import 'elements/programm-full-list';
 
 /* @tailwind base;
 @tailwind components;

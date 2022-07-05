@@ -8,6 +8,9 @@ import * as functions from './modules/functions.js';
 $(window).on('load', function () {
 	//  AFTER LOAD FUNCTIONS
 	functions.preventClickDefault($('button'));
+	$('.show-programm-btn').on('click', function () {
+		$('.programm-full-list').addClass('active');
+	});
 });
 
 $(window).on('resize', function () {

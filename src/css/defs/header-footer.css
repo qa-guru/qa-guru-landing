@@ -25,6 +25,11 @@
 		padding: 0 var(--side-padding);
 
 		&__logo {
+			a {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
 			svg {
 				height: calc(1.6666rem * var(--c));
 				width: auto;

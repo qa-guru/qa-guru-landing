@@ -1,0 +1,54 @@
+html,
+body {
+	font-size: 18px;
+	line-height: 1.66666;
+}
+
+.gc-main-content .lite-page {
+	font-family: Montserrat, sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1rem;
+	background-color: #f9f9f9;
+	color: #000000;
+
+	.main-footer,
+	.main-header {
+		display: flex;
+		height: 7.8888rem;
+		padding: 0 204px;
+	}
+
+	.main-footer__logo,
+	.main-header__logo {
+		svg {
+			height: 1.6666rem;
+		}
+	}
+
+	.gc-main-content .lite-page .container-std {
+		padding: 0 204px;
+	}
+
+	svg.arrow-min {
+		width: 1em;
+	}
+
+	.btn.f-btn.button-md,
+	a.button,
+	button {
+		background-color: #000000 !important;
+		color: #ffffff !important;
+	}
+
+	.programm-full-list {
+		display: none;
+	}
+
+	a,
+	a:focus,
+	a:active,
+	a:hover {
+		color: inherit;
+	}
+}
