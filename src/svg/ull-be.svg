@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 895.07 359.72">
+	<path class="bg" d="M0,0H895.07L895,329.57,0,301.94Z" />
+	<path class="line" d="M894.72,341.16l0,18.56L52.14,316.6Z" />
+	<path class="stroke" d="M59.87,273.89V79.5" />
+	<text class="header2" transform="translate(72.87 52.7)">Вы будете:</text>
+	<g class="std-txt">
+		<text transform="translate(72.87 112.25)">Автоматизировать ручные сценарии тестирования и экономить
+			время</text>
+		<text transform="translate(72.87 142.25)">ручным тестировщикам</text>
+		<text transform="translate(72.87 172.31)">Обеспечивать поддержку инфраструктуры своих тестов, развивая и
+			поддерживая</text>
+		<text transform="translate(72.87 202.31)">инфраструктуру</text>
+		<text transform="translate(72.87 232.36)">Работать с инструментами для автоматизации (Selenide, JUnit5,
+			Allure,REST Assured)</text>
+		<text transform="translate(72.87 262.25)">Анализировать результаты ваших тестов и предоставлять
+			отчётность
+		</text>
+	</g>
+	<g class="std-txt">
+		<text transform="translate(36.68 112.25)">1</text>
+		<text transform="translate(36.3 172.32)">2</text>
+		<text transform="translate(36.3 232.36)">3</text>
+		<text transform="translate(35.81 262.25)">4</text>
+	</g>
+</svg>

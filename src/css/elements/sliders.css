@@ -1,0 +1,69 @@
+.gc-main-content .lite-page .qa-slider {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	&__controls {
+		position: absolute;
+		width: 100%;
+		top: center;
+		z-index: 2;
+		pointer-events: none;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		a {
+			margin: 0;
+			padding: 0;
+			line-height: 1;
+			pointer-events: auto;
+		}
+		&__arrow {
+			cursor: pointer;
+			width: var(--arrow-width);
+		}
+	}
+	&__counter {
+		position: absolute;
+		left: var(--arrow-width);
+		z-index: 2;
+		top: 0;
+	}
+	&__slides {
+		position: relative;
+		z-index: 1;
+		width: 100%;
+		height: auto;
+		display: none;
+		> div {
+			position: relative;
+			float: left;
+			display: inline-flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			width: calc(100vw - var(--side-padding) * 2);
+			padding: * var(--arrow-width);
+			gap: var(--inner-padding);
+			> div {
+				flex: 0 0 calc(50% - var(--inner-padding) / 2);
+				&.left {
+					padding-left: var(--inner-padding);
+				}
+				&.right {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: center;
+					img {
+						object-fit: contain;
+						size: 100%;
+					}
+				}
+				h2 {
+					margin-bottom: 1.5em;
+				}
+			}
+		}
+	}
+	&.type1 {
+	}
+}
