@@ -8,14 +8,18 @@
 @custom-media --sm (max-width: 480px);
 
 :root {
+	--c: 1;
 	--side-padding: 204px;
 	--content-indents: calc(52px * var(--c));
 	--inner-padding: calc(100px * var(--c));
 	--block-indents: calc(200px * var(--c));
+
+	/* for getcouse */
+	/* --block-indents: calc(100px * var(--c)); */
+
 	--font-size: 18px;
 	--line-height: 1.66666;
 	--arrow-width: calc(78px * var(--c));
-	--c: 1;
 	@media (--lg) {
 		--c: 0.85;
 	}

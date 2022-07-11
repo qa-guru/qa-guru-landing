@@ -17,11 +17,11 @@ export function slider() {
 	let slideCount = $('.qa-slider__slides > div').length;
 	let slideWidth = $('.gc-main-content .lite-page .container-std').width();
 	$('.qa-slider__slides > div').innerWidth(slideWidth);
-	let slideUlWidth = slideCount * slideWidth;
+	let slideContainerWidth = slideCount * slideWidth;
 	let count = 1;
 
 	$('.qa-slider__slides').css({
-		width: slideUlWidth,
+		width: slideContainerWidth,
 		'margin-left': 0,
 		display: 'flex',
 	});
