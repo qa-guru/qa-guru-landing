@@ -59,6 +59,7 @@
 		</div>
 	</div>
 </div>
+<div class="container-blocks-bridge">@@include('../svg/blocks-bridge.svg')</div>
 <div class="container-std black what-is-qa">
 	<h2 class="block-title">Чем занимается QA Automation Engineer?</h2>
 	<div class="f">
@@ -84,20 +85,112 @@
 		упор на практику, ничего лишнего.
 	</p>
 	<hr />
-	<div class="qa-slider type1">
-		<div class="qa-slider__controls">
+	<div class="qa-slider" id="what_ull_learn">
+		<div class="qa-slider__controls controls">
 			<a class="prev control">@@include('../svg/arrow-slider_l.svg')</a>
 			<a class="next control">@@include('../svg/arrow-slider_r.svg')</a>
 		</div>
-		<div class="qa-slider__counter header1">01</div>
-		<div class="qa-slider__slides">
-			@@include('ull-learn/slide1.html')
-			@@include('ull-learn/slide2.html')
+		<div class="qa-slider__counter header1 counter">01</div>
+		<div class="qa-slider__slides slides">
+			@@include('ull-learn/slide1.html') @@include('ull-learn/slide2.html')
 		</div>
 	</div>
-	<div class="show-programm-button">
+	<div class="full-width-button">
 		<button class="lg-arr show-programm-btn">
 			Посмотреть подробную программу @@include('../svg/arrow-lg.svg')
 		</button>
+	</div>
+</div>
+<div class="container-std what-after-course">
+	<h2 class="block-title">Что ждет вас после курса?</h2>
+	<div class="what-after-course__container">
+		<div class="what-after-course__top">
+			<div class="man-pic">@@include('../svg/man-1.svg')</div>
+			<div>
+				<h2>Ваше новое резюме</h2>
+				<h3>Должность:<br />Тестировщик/Middle QA-engineer</h3>
+			</div>
+			<div>
+				<h3>Зарплата от:<br />100 000 ₽</h3>
+			</div>
+		</div>
+		<div class="what-after-course__bottom">
+			<ul>
+				<li>
+					<ul>
+						<li>
+							Ручное и автоматизированное тестирование веб и мобильных
+							приложений
+						</li>
+						<li>Составление баг-репортов</li>
+						<li>Работа с API</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>Применение техник тест-дизайна на практике</li>
+						<li>Приёмочное и регрессионное тестирование</li>
+						<li>Знание основ Git, Java, SQL и вёрстки</li>
+					</ul>
+				</li>
+				<li>
+					<ul>
+						<li>Приёмочное и регрессионное тестирование</li>
+						<li>
+							Планирование и написание браузерных тестов на Java с нуля
+							без подготовленной инфраструктуры, используя Selenium,
+							JUnit 5
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="container-std vacancies">
+	<h2 class="block-title">Открытые вакансии</h2>
+	<div class="qa-slider" id="slider_vacancies">
+		<div class="qa-slider__controls controls">
+			<a class="next control">@@include('../svg/arrow-slider_r.svg')</a>
+		</div>
+		<div class="qa-slider__slides slides">
+			@@include('vacancies/slide1.html') @@include('vacancies/slide1.html')
+		</div>
+	</div>
+	<div class="full-width-button">
+		<button class="lg-arr">
+			Получить карьерную консультацию @@include('../svg/arrow-lg.svg')
+		</button>
+	</div>
+</div>
+<div class="container-std who-teach">
+	<h2 class="block-title">Кто будет учить?</h2>
+	<p>
+		Учитесь у сильнейших в отрасли. Наши преподаватели регулярно выступают на
+		конференциях, и организовывают их (Heisenbug, Cyprus IT Forum).<br />Являются
+		основателями и активными участниками крупнейших сообществ по автоматизации
+		тестирования и всегда рады помочь, даже на вопросы вне программы курса.
+	</p>
+	<div class="who-teach__container">
+		<div class="numbers">
+		</div>
+		<div class="titles">
+		</div>
+		<div class="content">
+			@@include('who-teach/trainer01.html')
+			@@include('who-teach/trainer02.html')
+			@@include('who-teach/trainer03.html')
+		</div>
+	</div>
+</div>
+<div class="container-std how-we-teach">
+	<h2 class="block-title">Как мы учим?</h2>
+	<div class="how-we-teach__container">
+		<div class="top"></div>
+		<div class="items">
+			@@include('how-we-teach/item01.html')
+			@@include('how-we-teach/item02.html')
+			@@include('how-we-teach/item01.html')
+		</div>
 	</div>
 </div>

@@ -1,15 +1,25 @@
 'use strict';
 import jQuery from 'jquery';
 window.$ = window.jQuery = jQuery;
-import { jQueryWait } from './modules/jquery.wait.js';
-jQueryWait();
+// import { jQueryWait } from './modules/jquery.wait.js';
+// jQueryWait();
 import * as functions from './modules/functions.js';
+import { sliders } from './modules/sliders.js';
 
 $(window).on('load', function () {
 	//  AFTER LOAD FUNCTIONS
 	functions.preventClickDefault($('button'));
 	functions.showProgramm();
-	functions.slider();
+	sliders({
+		selector: $('.qa-slider#what_ull_learn'),
+		slidesOnScreen: 1,
+	});
+	sliders({
+		selector: $('.qa-slider#slider_vacancies'),
+		slidesOnScreen: 2,
+	});
+	functions.whoTeach();
+	functions.howWeTeach();
 });
 
 $(window).on('resize', function () {
@@ -32,4 +42,3 @@ window.addEventListener(
 	},
 	false,
 );
-

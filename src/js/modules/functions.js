@@ -12,68 +12,48 @@ export function showProgramm() {
 	});
 }
 
-// Слайдер
-export function slider() {
-	let slideCount = $('.qa-slider__slides > div').length;
-	let slideWidth = $('.gc-main-content .lite-page .container-std').width();
-	$('.qa-slider__slides > div').innerWidth(slideWidth);
-	let slideContainerWidth = slideCount * slideWidth;
-	let count = 1;
+// Кто будет учить
+export function whoTeach() {
+	const items = $('.who-teach__container .content').find('.item');
+	const numberContainer = $('.who-teach__container .numbers');
+	const titleContainer = $('.who-teach__container .titles');
 
-	$('.qa-slider__slides').css({
-		width: slideContainerWidth,
-		'margin-left': 0,
-		display: 'flex',
-	});
-	$('qa-slider__slides > div:last-child').prependTo($('.qa-slider__slides'));
-
-	function moveLeft() {
-		$('.qa-slider__slides')
-			.stop()
-			.animate(
-				{
-					left: +slideWidth,
-				},
-				700,
-				function () {
-					$('.qa-slider__slides > div:last-child').prependTo(
-						$('.qa-slider__slides'),
-					);
-					$('.qa-slider__slides').css('left', '');
-				},
-			);
-	}
-	function moveRight() {
-		$('.qa-slider__slides')
-			.stop()
-			.animate(
-				{
-					left: -slideWidth,
-				},
-				700,
-				function () {
-					$('.qa-slider__slides > div:first-child').appendTo(
-						$('.qa-slider__slides'),
-					);
-					$('.qa-slider__slides').css('left', '');
-				},
-			);
-	}
-	$('.qa-slider .next').on('click', function () {
-		moveRight();
-		count++;
-		if (count > slideCount) {
-			count = 1;
-		}
-		$('.qa-slider__counter').text('0' + count);
+	$.each(items, function (i, e) {
+		let name = $(this).find('.name').text();
+		numberContainer.append(`<div>0${i}</div>`);
+		titleContainer.append(`<div>${name}</div>`);
 	});
 
-	$('.qa-slider .prev').on('click', function () {
-		moveLeft();
-		count--;
-		if (count < 1) {
-			count = slideCount;
-		}
-		$('.qa-slider__counter').text('0' + count);
+	items.eq(0).addClass('active');
+	const createdNumbers = $('.who-teach__container .numbers > div');
+	const createdNames = $('.who-teach__container .titles > div');
+
+	createdNumbers.eq(0).addClass('active');
+	createdNames.eq(0).addClass('active');
+
+	$('.who-teach__container .titles > div').on('click', function () {
+		let index = $(this).index();
+		createdNumbers.add(createdNames).add(items).removeClass('active');
+		items.eq(index).addClass('active');
+		createdNumbers.eq(index).addClass('active');
+		createdNames.eq(index).addClass('active');
+	});
+}
+
+// Как мы учим
+export function howWeTeach() {
+	const items = $('.how-we-teach__container .items').find('.item');
+	const titleContainer = $('.how-we-teach__container .top');
+	$.each(items, function (i, e) {
+		let title = $(this).find('.item-title').text();
+		titleContainer.append(`<div class="top__item">${title}</div>`);
+	});
+	const titleItems = titleContainer.find('.top__item');
+	items.eq(0).addClass('active');
+	titleItems.eq(0).addClass('active');
+	$('.how-we-teach__container .top__item').on('click', function () {
+		titleItems.add(items).removeClass('active');
+		$(this).addClass('active');
+		items.eq($(this).index()).addClass('active');
 	});
 }

@@ -22,6 +22,32 @@
 			width: var(--arrow-width);
 		}
 	}
+	&#slider_vacancies {
+		overflow: visible;
+		.qa-slider__slides > div {
+			padding: * 0;
+			background: var(--c-white);
+			border: 1px solid var(--c-black);
+			margin-right: var(--arrow-width);
+			padding: 66px 38px 56px 18px;
+			position: relative;
+			&:after {
+				content: '';
+				z-index: 2;
+				display: block;
+				position: absolute;
+				background: var(--c-brand);
+				top: calc(100% + 12px);
+				height: 36px;
+				width: calc(100% + 38px);
+				left: 0;
+				clip-path: polygon(2% 0, 0 100%, 100% 0);
+			}
+		}
+		.qa-slider__controls {
+			justify-content: flex-end;
+		}
+	}
 	&__counter {
 		position: absolute;
 		left: var(--arrow-width);
@@ -63,7 +89,12 @@
 				}
 			}
 		}
-	}
-	&.type1 {
+		&.slides-2 {
+			> div {
+				width: calc((100vw - var(--side-padding) * 2) / 2);
+				flex-direction: column;
+				gap: 2rem;
+			}
+		}
 	}
 }

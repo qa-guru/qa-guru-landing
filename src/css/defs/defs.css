@@ -15,7 +15,10 @@
 	--block-indents: calc(200px * var(--c));
 
 	/* for getcouse */
-	/* --block-indents: calc(100px * var(--c)); */
+	/* --block-indents: calc(100px * var(--c));
+	.gc-user-admin .lite-margined-wrapper {
+		max-width: 100%;
+	} */
 
 	--font-size: 18px;
 	--line-height: 1.66666;
