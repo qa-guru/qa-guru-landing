@@ -92,7 +92,11 @@
 		</div>
 		<div class="qa-slider__counter header1 counter">01</div>
 		<div class="qa-slider__slides slides">
-			@@include('ull-learn/slide1.html') @@include('ull-learn/slide2.html')
+			@@include('ull-learn/slide1.html')
+			@@include('ull-learn/slide2.html')
+			@@include('ull-learn/slide3.html')
+			@@include('ull-learn/slide4.html')
+			@@include('ull-learn/slide5.html')
 		</div>
 	</div>
 	<div class="full-width-button">
@@ -180,6 +184,9 @@
 			@@include('who-teach/trainer01.html')
 			@@include('who-teach/trainer02.html')
 			@@include('who-teach/trainer03.html')
+			@@include('who-teach/trainer04.html')
+			@@include('who-teach/trainer05.html')
+			@@include('who-teach/trainer06.html')
 		</div>
 	</div>
 </div>
@@ -190,7 +197,62 @@
 		<div class="items">
 			@@include('how-we-teach/item01.html')
 			@@include('how-we-teach/item02.html')
-			@@include('how-we-teach/item01.html')
+			@@include('how-we-teach/item03.html')
+			@@include('how-we-teach/item04.html')
+			@@include('how-we-teach/item05.html')
 		</div>
 	</div>
 </div>
+<div class="container-std course-program">
+	<h2 class="block-title">Программа курса</h2>
+	<div class="course-program__container">
+		@@include('course-program.html')
+		<div class="full-width-button">
+			<button class="lg-arr">
+				Посмотреть подробную программу @@include('../svg/arrow-lg.svg')
+			</button>
+		</div>
+	</div>
+</div>
+<div class="container-std black course-price">
+	<h2 class="block-title">Сколько стоит курс?</h2>
+	<div class="course-price__container">
+		@@include('course-price.html')
+	</div>
+</div>
+<div class="container-std career">
+	<div class="f">
+		<h2 class="block-title">Центр карьеры</h2>
+		<p>Наша команда создала систему полного цикла подготовки автоматизаторов тестирования. На базе выпускников курсов и практикующих специалистов реализован Центр карьеры школы, оказывающий помощь не только в трудоустройстве инженеров, но и в организации диалога между компаниями и кандидатами.</p>
+	</div>
+	<div class="career__container">
+		<div class="career__menu">
+			<div>
+				<span>00</span>
+				<p>Чем мы полезны<br>для кандидатов</p>
+			</div>
+			<div>
+				<span>01</span>
+				<p>Чем мы полезны<br>для компаний</p>
+			</div>
+		</div>
+		<div class="career__content">
+			@@include('career/for-candidat.html')
+			@@include('career/for-company.html')
+		</div>
+	</div>
+	<div class="full-width-button">
+		<button class="lg-arr">
+			Получить карьерную консультацию @@include('../svg/arrow-lg.svg')
+		</button>
+	</div>
+</div>
+<div class="container-std faq">
+	<h2 class="block-title">FAQ</h2>
+	<div class="faq__container">
+		@@include('faq.html')
+	</div>
+</div>
+
+@@include('gc-form.html')
+@@include('programm.html')

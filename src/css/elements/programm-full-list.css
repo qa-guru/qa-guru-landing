@@ -1,8 +1,84 @@
-.gc-main-content .lite-page {
-	.programm-full-list {
-		position: absolute;
-		&.active {
-			display: block;
+body {
+	&.modal-active {
+		overflow-y: hidden;
+	}
+}
+.gc-main-content .lite-page .programm-full-list {
+	position: fixed;
+	overflow-y: scroll;
+	top: 0;
+	z-index: 10;
+	background: var(--c-bg);
+	height: 100%;
+	&.active {
+		display: block;
+	}
+	.close-btn {
+		position: fixed;
+		right: 2rem;
+		top: 2rem;
+		font-size: 3rem;
+		line-height: 1;
+		size: 4rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		&:hover {
+			color: var(--c-brand);
+		}
+	}
+	.col-md-12 {
+		padding: * 0;
+	}
+	.lesson-list {
+		background: none;
+		li {
+			overflow: visible;
+			&.with-image .state-icon-block {
+				display: none;
+			}
+			.info {
+				margin-left: 0;
+				background: var(--c-white);
+				padding: 2rem;
+				.vmiddle {
+					padding-right: 0;
+				}
+			}
+			table {
+				display: flex;
+				tbody {
+					display: flex;
+					flex: 1;
+					tr {
+						display: flex;
+						flex: 1;
+						td {
+							&.item-image {
+								display: none;
+							}
+							&.item-main-td {
+								flex: 1;
+								display: flex;
+								flex-direction: column;
+								align-items: stretch;
+								height: unset;
+								padding: 0;
+							}
+							.title {
+								font-weight: 600;
+								font-size: 1.3888rem;
+								line-height: 1.36;
+								color: var(--c-brand);
+							}
+						}
+					}
+				}
+			}
+		}
+		a:hover {
+			color: var(--c-black);
 		}
 	}
 }

@@ -13,8 +13,8 @@ export function sliders(settings) {
 		const sliderSlides = sliderContainer.find('> div');
 		const prev = params.selector.find('.controls .prev');
 		const next = params.selector.find('.controls .next');
-		const firstSlide = sliderSlides.first();
-		const lastSlide = sliderSlides.last();
+		let firstSlide = sliderSlides.first();
+		let lastSlide = sliderSlides.last();
 		const counter = params.selector.find('.counter');
 		const slideCount = sliderSlides.length;
 		let slideWidth = $('.gc-main-content .lite-page .container-std').width();
@@ -30,9 +30,9 @@ export function sliders(settings) {
 			'margin-left': 0,
 			display: 'flex',
 		});
-		lastSlide.prependTo(sliderContainer);
 
 		function moveLeft() {
+			lastSlide = sliderContainer.find('> div:last-child');
 			sliderContainer.stop().animate(
 				{
 					left: +slideWidth,
@@ -45,6 +45,7 @@ export function sliders(settings) {
 			);
 		}
 		function moveRight() {
+			firstSlide = sliderContainer.find('> div:first-child');
 			sliderContainer.stop().animate(
 				{
 					left: -slideWidth,
@@ -65,7 +66,6 @@ export function sliders(settings) {
 				}
 				if (counter.length > 0) {
 					counter.text('0' + count);
-					console.log(count);
 				}
 			});
 		}
@@ -78,7 +78,6 @@ export function sliders(settings) {
 				}
 				if (counter.length > 0) {
 					counter.text('0' + count);
-					console.log(count);
 				}
 			});
 		}

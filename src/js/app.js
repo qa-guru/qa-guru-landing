@@ -8,7 +8,6 @@ import { sliders } from './modules/sliders.js';
 
 $(window).on('load', function () {
 	//  AFTER LOAD FUNCTIONS
-	functions.preventClickDefault($('button'));
 	functions.showProgramm();
 	sliders({
 		selector: $('.qa-slider#what_ull_learn'),
@@ -20,6 +19,10 @@ $(window).on('load', function () {
 	});
 	functions.whoTeach();
 	functions.howWeTeach();
+	functions.courseProgram();
+	functions.career();
+	functions.faq();
+	functions.gcForm();
 });
 
 $(window).on('resize', function () {

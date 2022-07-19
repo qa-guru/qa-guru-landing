@@ -1,4 +1,10 @@
 .start-composition {
+	--margin-1: 30px;
+	--margin-2: 30px;
+	@media (--lg) {
+		--margin-1: 20px;
+		--margin-2: 20px;
+	}
 	&__top,
 	&__bottom {
 		display: flex;
@@ -6,14 +12,17 @@
 	}
 	&__top {
 		gap: 41px;
+		align-items: flex-end;
 	}
 	&__bottom {
 		gap: 27px;
-		margin-top: -30px;
+		margin-top: calc(var(--margin-1) * -1);
 		width: calc(100% - 19px);
+		align-items: flex-start;
 	}
 	svg {
-		flex: 1 1 45%;
+		flex: 0 0 calc(50% - 41px / 2);
+		height: auto;
 		.black {
 			fill: var(--c-black);
 		}
@@ -56,6 +65,7 @@
 		}
 	}
 	&__left2 {
+		margin-top: var(--margin-1);
 		line {
 			fill: none;
 			stroke: #000;
