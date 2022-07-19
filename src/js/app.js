@@ -1,8 +1,12 @@
 'use strict';
+
+// for dev
 import jQuery from 'jquery';
 window.$ = window.jQuery = jQuery;
+
 // import { jQueryWait } from './modules/jquery.wait.js';
 // jQueryWait();
+
 import * as functions from './modules/functions.js';
 import { sliders } from './modules/sliders.js';
 

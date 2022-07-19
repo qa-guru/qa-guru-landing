@@ -18,7 +18,7 @@ export function sliders(settings) {
 		const counter = params.selector.find('.counter');
 		const slideCount = sliderSlides.length;
 		let slideWidth = $('.gc-main-content .lite-page .container-std').width();
-		if (params.slidesOnScreen > 1) {
+		if (params.slidesOnScreen > 1 && $(window).width() > 1600) {
 			slideWidth = slideWidth / params.slidesOnScreen;
 		}
 		sliderSlides.innerWidth(slideWidth);

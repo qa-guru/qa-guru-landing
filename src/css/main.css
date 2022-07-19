@@ -98,7 +98,7 @@
 	h4,
 	.subtitle {
 		font-weight: 600;
-		font-size: 1rem;
+		font-size: 16px;
 		line-height: 1.666;
 	}
 	/* Основной текст */
@@ -106,7 +106,7 @@
 	h5,
 	.std-txt {
 		font-weight: 400;
-		font-size: 1rem;
+		font-size: 16px;
 		line-height: 1.666;
 	}
 	/* Сервисный текст */
@@ -178,6 +178,9 @@
 			margin: var(--block-indents) *;
 			&.start-block {
 				margin-top: 1rem;
+				@media (--lg) {
+					margin-top: 4rem;
+				}
 			}
 			&.black {
 				color: var(--c-white) var(--c-black);
@@ -210,6 +213,9 @@
 					calc(
 						100% / 2 - var(--content-indents) + var(--content-indents) / 2
 					);
+				@media (--lg) {
+					flex: 0 1 100%;
+				}
 			}
 		}
 		&-3 {
@@ -218,6 +224,9 @@
 					calc(
 						100% / 3 - var(--content-indents) + var(--content-indents) / 3
 					);
+				@media (--lg) {
+					flex: 0 1 100%;
+				}
 			}
 		}
 	}
@@ -236,11 +245,17 @@
 				h3 {
 					margin-bottom: 2.777rem;
 					min-height: 4em;
+					@media (--lg) {
+						margin-bottom: 1.6rem;
+					}
 				}
 				svg {
 					color: var(--c-brand);
 					height: 2.777rem;
 					margin-bottom: 2.777rem;
+					@media (--lg) {
+						margin-bottom: 1.6rem;
+					}
 				}
 				p {
 				}
@@ -267,6 +282,9 @@
 		padding: var(--inner-padding) *;
 		margin-left: var(--inner-padding);
 		padding-left: calc(var(--side-padding) - var(--inner-padding));
+		@media (--lg) {
+			padding-left: calc(var(--side-padding));
+		}
 		.block-title {
 			margin-bottom: 4.16rem;
 		}
@@ -279,12 +297,22 @@
 		}
 		.f {
 			gap: 230px;
+			flex-wrap: wrap;
+			@media (--lg) {
+				gap: 4rem;
+			}
 			div {
 				&:nth-child(1) {
 					flex: 0 0 30%;
+					@media (--lg) {
+						flex: 1 0 100%;
+					}
 				}
 				&:nth-child(2) {
 					flex: 1 1;
+					@media (--lg) {
+						flex: 1 0 100%;
+					}
 					svg {
 						.bg {
 							fill: var(--c-white);
@@ -352,6 +380,9 @@
 				left: var(--left);
 				right: 0;
 				clip-path: polygon(0 0, 100% 10%, 100% 92%, 0% 100%);
+				@media (--lg) {
+					clip-path: polygon(0 0, 100% 6%, 100% 94%, 0% 100%);
+				}
 			}
 			&:before {
 				background: var(--c-black);
@@ -360,14 +391,18 @@
 				left: 0;
 				right: var(--right);
 				clip-path: polygon(2% 8%, 100% 13%, 100% 89%, 0% 100%);
+				@media (--lg) {
+					clip-path: polygon(3% 8%, 100% 16%, 100% 91%, 0% 100%);
+				}
 			}
 		}
 		&__top {
 			display: flex;
 			align-items: flex-end;
 			justify-content: space-between;
+			flex-wrap: wrap;
 			gap: var(--content-indents);
-			margin-bottom: 82px;
+			margin-bottom: calc(82px * var(--c));
 			.man-pic {
 				size: 150px;
 				background: var(--c-bg);
@@ -375,18 +410,31 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				padding: 20px;
+				padding: calc(20px * var(--c));
 				svg {
 					size: 100%;
 					position: relative;
 					left: -5px;
 				}
+				@media (--lg) {
+					size: 120px;
+					svg {
+						left: -2px;
+					}
+				}
 			}
 			> div:nth-child(2) {
 				flex: 1 1 50%;
+				@media (--lg) {
+					flex: 1 1 60%;
+				}
 			}
 			> div:nth-child(3) {
 				flex: 1 1 25%;
+				@media (--lg) {
+					flex: 1 1 60%;
+					margin-left: calc(120px + var(--content-indents));
+				}
 			}
 			h2 {
 				margin-bottom: 40px;
@@ -399,9 +447,16 @@
 				padding-inline-start: 0;
 				margin-bottom: 0;
 				display: flex;
+				flex-wrap: wrap;
 				gap: var(--gap);
+				@media (--lg) {
+					gap: 1em;
+				}
 				> li {
 					flex: 0 0 calc(100% / 3 - var(--gap) + var(--gap) / 3);
+					@media (--lg) {
+						flex: 1 1 100%;
+					}
 					> ul {
 						list-style: disc;
 						padding-inline-start: 1.5em;
@@ -428,6 +483,10 @@
 	}
 	.who-teach {
 		overflow: hidden;
+		@media (--lg) {
+			padding-bottom: var(--block-indents);
+			margin-bottom: 0;
+		}
 		&__container {
 			border-top: 1px solid var(--c-brand);
 			margin-top: 44px;
@@ -450,14 +509,25 @@
 			}
 			.numbers {
 				flex: 0 0 3%;
+				@media (--lg) {
+					flex: 0 0 3rem;
+				}
 			}
 			.titles {
 				flex: 0 0 22%;
+				@media (--lg) {
+					flex: 0 1 35%;
+				}
 			}
 			.content {
 				--size: 620px;
 				flex: 0 0 calc(75% - 160px);
 				margin-left: 160px;
+				@media (--lg) {
+					--size: 0;
+					flex: 0 0 calc(65% - 40px - 3rem);
+					margin-left: 40px;
+				}
 				position: relative;
 				display: flex;
 				align-items: center;
@@ -470,6 +540,9 @@
 					left: 0;
 					size: var(--size);
 					background: var(--c-black);
+					@media (--lg) {
+						display: none;
+					}
 				}
 				&:before {
 					content: '';
@@ -494,11 +567,18 @@
 					transform: translateX(100vw);
 					transition: var(--transition);
 					transition-property: transform;
+					@media (--lg) {
+						flex-wrap: wrap;
+						clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
+					}
 					&.active {
 						transform: translateX(0);
 					}
 					.left {
 						flex: 0 0 calc(100% / 3 - var(--gap) / 2);
+						@media (--lg) {
+							flex: 0 1 50%;
+						}
 						img {
 							object-fit: contain;
 							size: 100%;
@@ -506,6 +586,9 @@
 					}
 					.right {
 						flex: 0 0 calc(100% / 3 * 2 - var(--gap) / 2);
+						@media (--lg) {
+							flex: 1 1 100%;
+						}
 					}
 					h3 {
 						color: var(--c-brand);
@@ -520,11 +603,22 @@
 	.how-we-teach {
 		overflow: hidden;
 		&__container {
+			@media (--lg) {
+				display: flex;
+				gap: 3rem;
+				align-items: flex-start;
+			}
 			.top {
 				display: flex;
 				align-items: stretch;
 				justify-content: space-around;
 				height: 104px;
+				@media (--lg) {
+					flex-direction: column;
+					height: unset;
+					align-items: flex-start;
+					flex: 0 0 40%;
+				}
 				&__item {
 					border-bottom: 20px solid var(--c-black);
 					flex: 1 1;
@@ -534,11 +628,19 @@
 					padding: * 0.5rem;
 					transition: var(--transition);
 					transition-property: color, border-color;
+					@media (--lg) {
+						border-bottom: none;
+						text-align: left;
+						flex: 0 1;
+					}
 					&.active {
 						font-size: 1.38rem;
 						color: var(--c-brand);
 						border-color: var(--c-brand);
 						flex: 1 1 12%;
+						@media (--lg) {
+							flex: 0 1;
+						}
 					}
 					&:not(.active) {
 						cursor: pointer;
@@ -548,16 +650,25 @@
 			}
 			.items {
 				margin-top: var(--inner-padding);
+				@media (--lg) {
+					margin-top: 0;
+				}
 				.item {
 					align-items: flex-start;
 					justify-content: space-between;
 					gap: var(--inner-padding);
 					display: none;
+					flex: 1 1 calc(60% - 3rem);
 					&.active {
 						display: flex;
 					}
 					.item-title {
 						margin-bottom: 2rem;
+					}
+					@media (--lg) {
+						.left {
+							display: none;
+						}
 					}
 				}
 			}
@@ -571,6 +682,9 @@
 		&__item {
 			display: flex;
 			gap: var(--inner-padding);
+			@media (--lg) {
+				gap: 20px;
+			}
 			&__number,
 			&__title {
 				transition: var(--transition);
@@ -627,6 +741,9 @@
 		&__container {
 			display: flex;
 			gap: var(--gap);
+			@media (--lg) {
+				flex-direction: column;
+			}
 		}
 		.wrapper {
 			color: var(--c-black) var(--c-white);
@@ -680,6 +797,9 @@
 			margin-bottom: calc(86px / var(--c));
 			justify-content: space-between;
 			align-items: stretch;
+			@media (--lg) {
+				flex-direction: column;
+			}
 			h2 {
 				flex: 0 1 25%;
 				margin-bottom: 0;
@@ -698,6 +818,9 @@
 		&__menu {
 			flex: 0 1 25%;
 			border-right: 1px solid var(--c-black);
+			@media (--lg) {
+				flex: 0 1 35%;
+			}
 			> div {
 				display: flex;
 				gap: 0.5rem;
@@ -825,8 +948,11 @@
 			align-items: stretch;
 			justify-content: space-between;
 			gap: 2.77rem;
+			@media (--lg) {
+				flex-direction: column;
+			}
 			&-item {
-				margin-bottom: 0!important;
+				margin-bottom: 0 !important;
 				display: none;
 				.f-input {
 					border: none;
@@ -837,13 +963,16 @@
 						color: var(--c-black);
 					}
 				}
-				&.part-userField, &.part-button {
+				&.part-userField,
+				&.part-button {
 					display: block;
 					flex: 1;
 				}
 			}
-			a.button, button, .btn.f-btn.button-md {
-				color: var(--c-black) var(--c-brand)!important;
+			a.button,
+			button,
+			.btn.f-btn.button-md {
+				color: var(--c-black) var(--c-brand) !important;
 				height: 2.77rem;
 				width: 100%;
 				justify-content: center;

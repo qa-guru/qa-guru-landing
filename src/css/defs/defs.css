@@ -20,11 +20,14 @@
 		max-width: 100%;
 	} */
 
-	--font-size: 18px;
+	--font-size: calc(18px * var(--c));
 	--line-height: 1.66666;
 	--arrow-width: calc(78px * var(--c));
 	@media (--lg) {
-		--c: 0.85;
+		--c: 0.8;
+		--font-size: calc(18px * var(--c));
+		--side-padding: 48px;
+
 	}
 }
 

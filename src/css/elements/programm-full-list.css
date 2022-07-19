@@ -3,6 +3,9 @@ body {
 		overflow-y: hidden;
 	}
 }
+.gc-user-admin .programm-full-list {
+	display: none!important;
+}
 .gc-main-content .lite-page .programm-full-list {
 	position: fixed;
 	overflow-y: scroll;
