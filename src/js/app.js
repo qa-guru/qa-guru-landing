@@ -7,6 +7,10 @@ window.$ = window.jQuery = jQuery;
 // import { jQueryWait } from './modules/jquery.wait.js';
 // jQueryWait();
 
+import { jQueryVisible } from './modules/jquery.visible.js';
+jQueryVisible();
+
+
 import * as functions from './modules/functions.js';
 import { sliders } from './modules/sliders.js';
 
@@ -16,10 +20,12 @@ $(window).on('load', function () {
 	sliders({
 		selector: $('.qa-slider#what_ull_learn'),
 		slidesOnScreen: 1,
+		interval: 3000,
 	});
 	sliders({
 		selector: $('.qa-slider#slider_vacancies'),
 		slidesOnScreen: 2,
+		interval: 3000,
 	});
 	functions.whoTeach();
 	functions.howWeTeach();
@@ -32,8 +38,17 @@ $(window).on('load', function () {
 $(window).on('resize', function () {
 	clearTimeout(window.resizedFinished);
 	window.resizedFinished = setTimeout(function () {
-		// RESIZE FUNCTIONS
-	}, 100);
+		sliders({
+			selector: $('.qa-slider#what_ull_learn'),
+			slidesOnScreen: 1,
+			interval: 3000,
+		});
+		sliders({
+			selector: $('.qa-slider#slider_vacancies'),
+			slidesOnScreen: 2,
+			interval: 3000,
+		});
+		}, 100);
 });
 
 let timer;
@@ -44,8 +59,17 @@ window.addEventListener(
 			clearTimeout(timer);
 		}
 		timer = setTimeout(function () {
-			// SCROLL FUNCTIONS
-		}, 100);
+			sliders({
+				selector: $('.qa-slider#what_ull_learn'),
+				slidesOnScreen: 1,
+				interval: 3000,
+			});
+			sliders({
+				selector: $('.qa-slider#slider_vacancies'),
+				slidesOnScreen: 2,
+				interval: 3000,
+			});
+				}, 100);
 	},
 	false,
 );

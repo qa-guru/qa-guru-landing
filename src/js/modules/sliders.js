@@ -1,10 +1,13 @@
 export function sliders(settings) {
-	if (settings.selector.length > 0) {
+	if (settings.selector.length > 0 && settings.selector.visible()) {
 		let params = {
 			selector: '',
 			slidesOnScreen: 1,
+			interval: false,
 		};
 		$.extend(params, settings);
+		let interval;
+		let clicked = false;
 
 		const sliderContainer = params.selector.find('.slides');
 		if (params.slidesOnScreen > 1) {
@@ -43,6 +46,13 @@ export function sliders(settings) {
 					sliderContainer.css('left', '');
 				},
 			);
+			count--;
+			if (count < 1) {
+				count = slideCount;
+			}
+			if (counter.length > 0) {
+				counter.text('0' + count);
+			}
 		}
 		function moveRight() {
 			firstSlide = sliderContainer.find('> div:first-child');
@@ -56,29 +66,45 @@ export function sliders(settings) {
 					sliderContainer.css('left', '');
 				},
 			);
+			count++;
+			if (count > slideCount) {
+				count = 1;
+			}
+			if (counter.length > 0) {
+				counter.text('0' + count);
+			}
 		}
 		if (next.length > 0) {
 			next.on('click', function () {
 				moveRight();
-				count++;
-				if (count > slideCount) {
-					count = 1;
-				}
-				if (counter.length > 0) {
-					counter.text('0' + count);
-				}
+				clicked = true;
 			});
 		}
 		if (prev.length > 0) {
 			prev.on('click', function () {
 				moveLeft();
-				count--;
-				if (count < 1) {
-					count = slideCount;
-				}
-				if (counter.length > 0) {
-					counter.text('0' + count);
-				}
+				clicked = true;
+			});
+		}
+
+		if (params.interval > 1 && params.interval !== false && params.slidesOnScreen < slideCount) {
+			console.log('vis');
+			$(function () {
+				interval = setInterval(function () {
+					moveRight();
+				}, params.interval);
+				params.selector.hover(
+					function () {
+						clearInterval(interval);
+					},
+					function () {
+						if (clicked === false) {
+							interval = setInterval(function () {
+								moveRight();
+							}, params.interval);
+						}
+					},
+				);
 			});
 		}
 	}

@@ -36,6 +36,9 @@
 			}
 		}
 		&__menu {
+			@media (--sm) {
+				display: none;
+			}
 			margin: 0;
 			padding: 0;
 			ul {
@@ -50,6 +53,9 @@
 			}
 		}
 		&__login {
+			@media (--sm) {
+				font-size: 0.8em;
+			}
 			a {
 				padding: 0.55em 0;
 			}
@@ -58,6 +64,11 @@
 			display: flex;
 			flex-direction: column;
 			gap: 0.666em;
+		}
+	}
+	.main-footer {
+		@media (--sm) {
+			flex-direction: column;
 		}
 	}
 }

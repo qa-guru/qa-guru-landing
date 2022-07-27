@@ -9,16 +9,25 @@
 	&__bottom {
 		display: flex;
 		justify-content: center;
+		@media (--sm) {
+			flex-direction: column;
+		}
 	}
 	&__top {
 		gap: 41px;
 		align-items: flex-end;
+		@media (--sm) {
+			margin-top: 4rem;
+		}
 	}
 	&__bottom {
 		gap: 27px;
 		margin-top: calc(var(--margin-1) * -1);
 		width: calc(100% - 19px);
 		align-items: flex-start;
+		@media (--sm) {
+			display: none;
+		}
 	}
 	svg {
 		flex: 0 0 calc(50% - 41px / 2);
@@ -34,6 +43,9 @@
 		}
 		.gray {
 			fill: var(--c-gray);
+		}
+		@media (--sm) {
+			flex: 1 1 100%;
 		}
 	}
 	&__left {
@@ -62,6 +74,9 @@
 		}
 		circle {
 			fill: #333333;
+		}
+		@media (--sm) {
+			max-width: 100%;
 		}
 	}
 	&__left2 {

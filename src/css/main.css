@@ -79,6 +79,9 @@
 		font-weight: 700;
 		font-size: 2.888rem;
 		line-height: 1.3461;
+		@media (--sm) {
+			font-size: 1.8rem;
+		}
 	}
 	/* Заголовок 1 */
 	h2,
@@ -86,6 +89,9 @@
 		font-weight: 600;
 		font-size: 1.944rem;
 		line-height: 0.9714;
+		@media (--sm) {
+			line-height: 1.2
+		}
 	}
 	/* Заголовок 2 */
 	h3,
@@ -122,6 +128,9 @@
 	}
 	.block-title {
 		margin-bottom: 5.555rem;
+		@media (--sm) {
+			margin-bottom: 3rem;
+		}
 	}
 
 	/* Lists */
@@ -181,6 +190,9 @@
 				@media (--lg) {
 					margin-top: 4rem;
 				}
+				@media (--sm) {
+					margin-top: 2rem;
+				}
 			}
 			&.black {
 				color: var(--c-white) var(--c-black);
@@ -191,6 +203,9 @@
 				calc(var(--side-padding) + 30px) calc(var(--block-indents) * -1)
 				var(--inner-padding);
 			display: flex;
+			@media (--sm) {
+				display: none;
+			}
 		}
 	}
 
@@ -213,8 +228,11 @@
 					calc(
 						100% / 2 - var(--content-indents) + var(--content-indents) / 2
 					);
-				@media (--lg) {
+				@media (--lg-m) {
 					flex: 0 1 100%;
+				}
+				@media (--sm) {
+					max-width: 100%;
 				}
 			}
 		}
@@ -224,7 +242,7 @@
 					calc(
 						100% / 3 - var(--content-indents) + var(--content-indents) / 3
 					);
-				@media (--lg) {
+				@media (--lg-m) {
 					flex: 0 1 100%;
 				}
 			}
@@ -239,6 +257,9 @@
 			padding: 3.95rem 1.95rem 4.5rem 2.72rem;
 			--content-indents: calc(100px * var(--c));
 			align-items: flex-start;
+			@media (--sm) {
+				padding: 0;
+			}
 			div {
 				position: relative;
 				z-index: 2;
@@ -270,6 +291,9 @@
 				position: absolute;
 				display: block;
 				background: var(--c-white);
+				@media (--sm) {
+					display: none;
+				}
 			}
 			&:before {
 				left: -30px;
@@ -284,6 +308,10 @@
 		padding-left: calc(var(--side-padding) - var(--inner-padding));
 		@media (--lg) {
 			padding-left: calc(var(--side-padding));
+		}
+		@media (--sm) {
+			margin-left: 0;
+			padding: 3rem *;
 		}
 		.block-title {
 			margin-bottom: 4.16rem;
@@ -353,6 +381,11 @@
 				fill: var(--c-bg);
 			}
 		}
+		@media (--sm) {
+			.full-width-button {
+				display: none;
+			}
+		}
 	}
 	.what-after-course {
 		--top: 74px;
@@ -361,11 +394,23 @@
 		--right: 83px;
 		--padding: 104px;
 		--padding-top: 68px;
+		@media (--sm) {
+			--top: 0;
+			--bottom: 0;
+			--left: 0;
+			--right: 0;
+			--padding: 0;
+			--padding-top: 0;
+			padding: 0;
+		}
 		&__container {
 			position: relative;
 			z-index: 2;
 			padding: var(--padding-top) var(--left) var(--padding)
 				calc(var(--padding) + var(--left));
+			@media (--sm) {
+				padding: var(--side-padding);
+			}
 			&:after,
 			&:before {
 				content: '';
@@ -383,6 +428,9 @@
 				@media (--lg) {
 					clip-path: polygon(0 0, 100% 6%, 100% 94%, 0% 100%);
 				}
+				@media (--sm) {
+					clip-path: none;
+				}
 			}
 			&:before {
 				background: var(--c-black);
@@ -393,6 +441,9 @@
 				clip-path: polygon(2% 8%, 100% 13%, 100% 89%, 0% 100%);
 				@media (--lg) {
 					clip-path: polygon(3% 8%, 100% 16%, 100% 91%, 0% 100%);
+				}
+				@media (--sm) {
+					clip-path: none;
 				}
 			}
 		}
@@ -434,6 +485,9 @@
 				@media (--lg) {
 					flex: 1 1 60%;
 					margin-left: calc(120px + var(--content-indents));
+				}
+				@media (--sm) {
+					margin-left: 0;
 				}
 			}
 			h2 {
@@ -479,6 +533,9 @@
 	.vacancies {
 		.full-width-button {
 			margin-top: 150px;
+			@media (--sm) {
+				margin-top: 80px;
+			}
 		}
 	}
 	.who-teach {
@@ -492,6 +549,9 @@
 			margin-top: 44px;
 			padding-top: 44px;
 			display: flex;
+			@media (--sm) {
+				flex-direction: column;
+			}
 			.numbers,
 			.titles {
 				> div {
@@ -501,16 +561,31 @@
 					&.active {
 						font-size: 1.38rem;
 						color: var(--c-brand);
+
+						@media (--sm) {
+							font-size: 1rem;
+							color: var(--c-black);
+						}
+					}
+					@media (--sm) {
+						min-height: unset;
+						margin-bottom: 1rem;
 					}
 				}
 				&:not(.active) {
 					cursor: pointer;
+					@media (--sm) {
+						cursor: auto;
+					}
 				}
 			}
 			.numbers {
 				flex: 0 0 3%;
 				@media (--lg) {
 					flex: 0 0 3rem;
+				}
+				@media (--sm) {
+					display: none;
 				}
 			}
 			.titles {
@@ -532,6 +607,9 @@
 				display: flex;
 				align-items: center;
 				min-height: var(--size);
+				@media (--sm) {
+					display: none;
+				}
 				&:before,
 				&:after {
 					content: '';
@@ -619,12 +697,15 @@
 					align-items: flex-start;
 					flex: 0 0 40%;
 				}
+				@media (--sm) {
+					display: none;
+				}
 				&__item {
 					border-bottom: 20px solid var(--c-black);
 					flex: 1 1;
 					text-align: center;
 					color: var(--c-black);
-					font-size: 1rem;
+					font-size: 0.9rem;
 					padding: * 0.5rem;
 					transition: var(--transition);
 					transition-property: color, border-color;
@@ -659,6 +740,10 @@
 					gap: var(--inner-padding);
 					display: none;
 					flex: 1 1 calc(60% - 3rem);
+					@media (--sm) {
+						display: flex;
+						margin-top: 2rem;
+					}
 					&.active {
 						display: flex;
 					}
@@ -685,6 +770,9 @@
 			@media (--lg) {
 				gap: 20px;
 			}
+			@media (--sm) {
+				flex-direction: column;
+			}
 			&__number,
 			&__title {
 				transition: var(--transition);
@@ -694,10 +782,16 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
+				@media (--sm) {
+					min-height: unset;
+				}
 			}
 			&__number {
 				flex: 0 0 2rem;
 				text-align: right;
+				@media (--sm) {
+					display: none;
+				}
 			}
 			&__title {
 				flex: 0 0 25%;
@@ -711,6 +805,9 @@
 				transition: var(--transition);
 				transition-property: transform;
 				padding-top: 1rem;
+				@media (--sm) {
+					display: none;
+				}
 			}
 			&.active {
 				color: var(--c-brand);
@@ -720,9 +817,16 @@
 					font-size: 1rem;
 					transform: translateX(0);
 				}
+				@media (--sm) {
+					font-size: 1rem;
+					color: var(--c-black);
+				}
 			}
 			&:not(.active) {
 				cursor: pointer;
+				@media (--sm) {
+					cursor: auto;
+				}
 			}
 		}
 		.full-width-button {
@@ -731,6 +835,9 @@
 			bottom: 0;
 			left: calc(28% + var(--inner-padding));
 			width: calc(100% - (28% + var(--inner-padding)));
+			@media (--sm) {
+				display: none;
+			}
 		}
 	}
 	.course-price {
@@ -777,9 +884,10 @@
 		&__button-block {
 			display: flex;
 			div {
-				padding: calc(10px * var(--c)) calc(48px * var(--c));
+				padding: calc(10px * var(--c)) calc(24px * var(--c));
 				color: var(--c-black) var(--c-white);
 				margin-right: 1px;
+				text-align: center;
 			}
 			a.button,
 			button {
@@ -814,12 +922,18 @@
 			gap: var(--inner-padding);
 			justify-content: space-between;
 			align-items: stretch;
+			@media (--sm) {
+				flex-direction: column;
+			}
 		}
 		&__menu {
 			flex: 0 1 25%;
 			border-right: 1px solid var(--c-black);
 			@media (--lg) {
 				flex: 0 1 35%;
+			}
+			@media (--sm) {
+				border-right: none;
 			}
 			> div {
 				display: flex;
@@ -839,6 +953,9 @@
 					flex: 1 1;
 					text-align: right;
 					padding-right: calc(var(--inner-padding) / 2);
+					@media (--sm) {
+						padding-right: 0;
+					}
 				}
 				&.active,
 				&.active p {
@@ -869,6 +986,13 @@
 		--left-side: calc(27px * var(--c));
 		--right-side: calc(40px * var(--c));
 		--up-bot: calc(5px * var(--c));
+		@media (--sm) {
+			--item-indents: 24px;
+			--item-pad: 12px;
+			--left-side: calc(27px * var(--c));
+			--right-side: calc(40px * var(--c));
+			--up-bot: calc(5px * var(--c));
+		}
 		&__container {
 			display: flex;
 			flex-direction: column;
@@ -876,6 +1000,9 @@
 		}
 		&__item {
 			padding: var(--item-indents) 30% var(--item-indents) var(--item-pad);
+			@media (--sm) {
+				padding-right: 12px;
+			}
 			position: relative;
 			z-index: 2;
 			min-height: 5.2778rem;
@@ -935,6 +1062,11 @@
 	color: var(--c-white) var(--c-black);
 	margin: * var(--side-padding);
 	width: calc(100% - var(--side-padding) * 2);
+	@media (--sm) {
+		margin: * 0;
+		width: 100%;
+		padding: 48px var(--side-padding);
+	}
 	.container {
 		padding: 0;
 		h3 {

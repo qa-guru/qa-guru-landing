@@ -13,6 +13,9 @@ export function showProgramm() {
 
 // Кто будет учить
 export function whoTeach() {
+	let clicked = false;
+	let intervalVal = 3000;
+	let number = 0;
 	const items = $('.who-teach__container .content').find('.item');
 	const numberContainer = $('.who-teach__container .numbers');
 	const titleContainer = $('.who-teach__container .titles');
@@ -37,11 +40,45 @@ export function whoTeach() {
 		items.eq(index).addClass('active');
 		createdNumbers.eq(index).addClass('active');
 		createdNames.eq(index).addClass('active');
+		number = index;
+		clicked = true;
 	});
+
+	$(function () {
+		let interval = setInterval(function () {
+			change();
+		}, intervalVal);
+		$('.who-teach__container').hover(
+			function () {
+				clearInterval(interval);
+			},
+			function () {
+				if (clicked === false) {
+					interval = setInterval(function () {
+						change();
+					}, intervalVal);
+				}
+			},
+		);
+	});
+	function change() {
+		if (number + 1 < items.length) {
+			number++;
+		} else {
+			number = 0;
+		}
+		createdNumbers.add(createdNames).add(items).removeClass('active');
+		items.eq(number).addClass('active');
+		createdNumbers.eq(number).addClass('active');
+		createdNames.eq(number).addClass('active');
+	}
 }
 
 // Как мы учим
 export function howWeTeach() {
+	let clicked = false;
+	let intervalVal = 3000;
+	let number = 0;
 	const items = $('.how-we-teach__container .items').find('.item');
 	const itemsLength = $('.how-we-teach__container .items').find(
 		'.item',
@@ -61,11 +98,45 @@ export function howWeTeach() {
 		titleItems.add(items).removeClass('active');
 		$(this).addClass('active');
 		items.eq($(this).index()).addClass('active');
+		number = $(this).index();
+		clicked = true;
 	});
+
+	$(function () {
+		let interval = setInterval(function () {
+			change();
+		}, intervalVal);
+		$('.how-we-teach__container').hover(
+			function () {
+				clearInterval(interval);
+			},
+			function () {
+				if (clicked === false) {
+					interval = setInterval(function () {
+						change();
+					}, intervalVal);
+				}
+			},
+		);
+	});
+
+	function change() {
+		if (number + 1 < items.length) {
+			number++;
+		} else {
+			number = 0;
+		}
+		titleItems.add(items).removeClass('active');
+		items.eq(number).addClass('active');
+		titleItems.eq(number).addClass('active');
+	}
 }
 
 // Программа курса
 export function courseProgram() {
+	let clicked = false;
+	let intervalVal = 3000;
+	let number = 0;
 	const items = $('.course-program__container').find('.course-program__item');
 	$.each(items, function (i, e) {
 		$(this).prepend(`<div class='course-program__item__number'>0${i}</div>`);
@@ -74,7 +145,36 @@ export function courseProgram() {
 	$('.course-program__item').on('click', function () {
 		items.removeClass('active');
 		$(this).addClass('active');
+		clicked = true;
 	});
+
+	$(function () {
+		let interval = setInterval(function () {
+			change();
+		}, intervalVal);
+		$('.course-program__container').hover(
+			function () {
+				clearInterval(interval);
+			},
+			function () {
+				if (clicked === false) {
+					interval = setInterval(function () {
+						change();
+					}, intervalVal);
+				}
+			},
+		);
+	});
+
+	function change() {
+		if (number + 1 < items.length) {
+			number++;
+		} else {
+			number = 0;
+		}
+		items.removeClass('active');
+		items.eq(number).addClass('active');
+	}
 }
 
 // Центр карьеры

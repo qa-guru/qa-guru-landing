@@ -21,6 +21,9 @@
 			cursor: pointer;
 			width: var(--arrow-width);
 		}
+		@media (--sm) {
+			display: none;
+		}
 	}
 	&#slider_vacancies {
 		overflow: visible;
@@ -46,6 +49,9 @@
 				left: 0;
 				clip-path: polygon(2% 0, 0 100%, 100% 0);
 			}
+			@media (--sm) {
+				margin: 0;
+			}
 		}
 		.qa-slider__controls {
 			justify-content: flex-end;
@@ -56,6 +62,9 @@
 		left: var(--arrow-width);
 		z-index: 2;
 		top: 0;
+		@media (--sm) {
+			display: none;
+		}
 	}
 	&__slides {
 		position: relative;
@@ -75,6 +84,9 @@
 			flex-wrap: wrap;
 			@media (--lg) {
 				gap: 2rem;
+			}
+			@media (--sm) {
+				padding: * 0;
 			}
 			> div {
 				flex: 0 0 calc(50% - var(--inner-padding) / 2);
