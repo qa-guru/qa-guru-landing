@@ -51,4 +51,7 @@ body {
 	a:hover {
 		color: inherit;
 	}
+	svg {
+		height: 0;
+	}
 }

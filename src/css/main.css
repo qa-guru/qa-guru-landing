@@ -1,4 +1,7 @@
 .gc-main-content .lite-page {
+	svg {
+		height: auto;
+	}
 	/* Buttons */
 	a.button,
 	a.has-arrow,
@@ -90,7 +93,7 @@
 		font-size: 1.944rem;
 		line-height: 0.9714;
 		@media (--sm) {
-			line-height: 1.2
+			line-height: 1.2;
 		}
 	}
 	/* Заголовок 2 */
@@ -593,6 +596,9 @@
 				@media (--lg) {
 					flex: 0 1 35%;
 				}
+				@media (--sm) {
+					display: none;
+				}
 			}
 			.content {
 				--size: 620px;
@@ -608,7 +614,9 @@
 				align-items: center;
 				min-height: var(--size);
 				@media (--sm) {
-					display: none;
+					position: static;
+					flex-direction: column;
+					margin-left: 0;
 				}
 				&:before,
 				&:after {
@@ -649,6 +657,14 @@
 						flex-wrap: wrap;
 						clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 92%);
 					}
+					@media (--sm) {
+						position: static;
+						transform: translateX(0);
+						padding: 0;
+						clip-path: none;
+						background: none;
+						margin-bottom: 2rem;
+					}
 					&.active {
 						transform: translateX(0);
 					}
@@ -673,6 +689,7 @@
 					}
 					.description {
 						margin-top: 2rem;
+						color: var(--c-black);
 					}
 				}
 			}
@@ -696,6 +713,7 @@
 					height: unset;
 					align-items: flex-start;
 					flex: 0 0 40%;
+					gap: 1rem;
 				}
 				@media (--sm) {
 					display: none;
@@ -772,6 +790,7 @@
 			}
 			@media (--sm) {
 				flex-direction: column;
+				gap: 0;
 			}
 			&__number,
 			&__title {
@@ -795,6 +814,11 @@
 			}
 			&__title {
 				flex: 0 0 25%;
+				@media (--sm) {
+					font-weight: 600;
+					font-size: 1.3888rem;
+					line-height: 1.36;
+				}
 			}
 			&__description {
 				flex: 1 1;
@@ -806,7 +830,10 @@
 				transition-property: transform;
 				padding-top: 1rem;
 				@media (--sm) {
-					display: none;
+					position: static;
+					transform: translateX(0);
+					padding-top: 0;
+					margin-bottom: 2rem;
 				}
 			}
 			&.active {
@@ -842,13 +869,14 @@
 	}
 	.course-price {
 		--padding: 74px;
-		--padding-wrapper: 60px 36px;
+		--padding-bottom: 60px;
+		--padding-wrapper: var(--padding-bottom) 36px;
 		--gap: 70px;
 		padding: var(--padding) *;
 		&__container {
 			display: flex;
 			gap: var(--gap);
-			@media (--lg) {
+			@media (--lg-m) {
 				flex-direction: column;
 			}
 		}
@@ -856,6 +884,10 @@
 			color: var(--c-black) var(--c-white);
 			padding: var(--padding-wrapper);
 			flex: 1;
+			position: relative;
+			@media (--lg-m) {
+				width: 100%;
+			}
 		}
 		&__item {
 			display: flex;
@@ -896,6 +928,33 @@
 		}
 		a.header2 {
 			cursor: pointer;
+		}
+		&__more {
+			&.content {
+				border: 1px solid var(--c-brand);
+				background: var(--c-white);
+				position: absolute;
+				padding: 0.35rem;
+				left: 1rem;
+				bottom: calc(var(--padding-bottom) - 0.5rem);
+				transform: translateY(100%);
+				width: calc(100% - 2rem);
+				pointer-events: none;
+				opacity: 0;
+				ul {
+					gap: 0.25em;
+					padding-inline-start: 1em;
+				}
+				li {
+					font-size: 0.75rem;
+					padding-left: 0;
+					line-height: 1.4;
+				}
+				&.active {
+					pointer-events: auto;
+					opacity: 1;
+				}
+			}
 		}
 	}
 	.career {
@@ -1062,9 +1121,11 @@
 	color: var(--c-white) var(--c-black);
 	margin: * var(--side-padding);
 	width: calc(100% - var(--side-padding) * 2);
-	@media (--sm) {
+	@media (--lg) {
 		margin: * 0;
 		width: 100%;
+	}
+	@media (--sm) {
 		padding: 48px var(--side-padding);
 	}
 	.container {
@@ -1080,7 +1141,7 @@
 			align-items: stretch;
 			justify-content: space-between;
 			gap: 2.77rem;
-			@media (--lg) {
+			@media (--lg-m) {
 				flex-direction: column;
 			}
 			&-item {

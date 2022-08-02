@@ -1,7 +1,6 @@
 export function sliders(settings) {
-	if (settings.selector.length > 0 && settings.selector.visible()) {
+	if (settings.selector.length) {
 		let params = {
-			selector: '',
 			slidesOnScreen: 1,
 			interval: false,
 		};
@@ -86,9 +85,11 @@ export function sliders(settings) {
 				clicked = true;
 			});
 		}
-
-		if (params.interval > 1 && params.interval !== false && params.slidesOnScreen < slideCount) {
-			console.log('vis');
+		if (
+			params.interval > 1 &&
+			params.interval !== false &&
+			params.slidesOnScreen < slideCount
+		) {
 			$(function () {
 				interval = setInterval(function () {
 					moveRight();

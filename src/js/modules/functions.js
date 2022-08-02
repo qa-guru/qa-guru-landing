@@ -11,6 +11,42 @@ export function showProgramm() {
 	});
 }
 
+// Показать карьерное развитие
+export function showCourseMore() {
+	const button = $('a.course-price__more');
+	const content = $('.course-price__more.content');
+
+	$(document).click(function (e) {
+		if (
+			!button.is(e.target) &&
+			!content.is(e.target) &&
+			content.has(e.target).length === 0
+		) {
+			content.removeClass('active');
+		}
+	});
+	button.on('click', function () {
+		content.toggleClass('active');
+	});
+}
+
+// Размер заголовков
+export function headerSize() {
+	const headers = $('.this-course-for > div div h3');
+	headers.css({ minHeight: 'unset' });
+	if ($(window).width() > 1200) {
+		let maxHeight = Math.max.apply(
+			null,
+			headers
+				.map(function () {
+					return $(this).height();
+				})
+				.get(),
+		);
+		headers.css({ minHeight: maxHeight });
+	}
+}
+
 // Кто будет учить
 export function whoTeach() {
 	let clicked = false;
@@ -43,7 +79,6 @@ export function whoTeach() {
 		number = index;
 		clicked = true;
 	});
-
 	$(function () {
 		let interval = setInterval(function () {
 			change();

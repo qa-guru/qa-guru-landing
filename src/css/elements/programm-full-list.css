@@ -18,17 +18,22 @@ body {
 	}
 	.close-btn {
 		position: fixed;
-		right: 2rem;
-		top: 2rem;
 		font-size: 3rem;
 		line-height: 1;
-		size: 4rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
+		background: var(--c-brand);
+		size: 4rem;
+		right: 2rem;
+		top: 2rem;
+		@media (--md) {
+			top: 0;
+			right: 0;
+		}
 		&:hover {
-			color: var(--c-brand);
+			color: var(--c-white);
 		}
 	}
 	.col-md-12 {
@@ -36,8 +41,23 @@ body {
 	}
 	.lesson-list {
 		background: none;
+		padding: 0;
+		margin: var(--side-padding) 0;
+		@media (--lg) {
+			padding: 3rem;
+		}
+		@media (--md) {
+			padding: 0;
+		}
 		li {
 			overflow: visible;
+			margin: * 0;
+			&:first-child {
+				margin-top: 0;
+			}
+			&:last-child {
+				margin-bottom: 0;
+			}
 			&.with-image .state-icon-block {
 				display: none;
 			}
