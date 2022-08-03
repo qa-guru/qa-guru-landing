@@ -689,7 +689,9 @@
 					}
 					.description {
 						margin-top: 2rem;
-						color: var(--c-black);
+						@media (--sm) {
+							color: var(--c-black);
+						}
 					}
 				}
 			}

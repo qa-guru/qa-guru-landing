@@ -1,12 +1,16 @@
 export function sliders(settings) {
-	if (settings.selector.length) {
+	if (settings.selector.length > 0) {
 		let params = {
 			slidesOnScreen: 1,
 			interval: false,
+			offset: 1580,
+			speed: 1000,
 		};
 		$.extend(params, settings);
 		let interval;
 		let clicked = false;
+		const mainContainer = $('.gc-main-content .lite-page .container-std');
+		let count = 1;
 
 		const sliderContainer = params.selector.find('.slides');
 		if (params.slidesOnScreen > 1) {
@@ -19,27 +23,49 @@ export function sliders(settings) {
 		let lastSlide = sliderSlides.last();
 		const counter = params.selector.find('.counter');
 		const slideCount = sliderSlides.length;
-		let slideWidth = $('.gc-main-content .lite-page .container-std').width();
-		if (params.slidesOnScreen > 1 && $(window).width() > 1600) {
+		let slideWidth = mainContainer.width();
+		if (params.slidesOnScreen > 1 && $(window).width() > params.offset) {
 			slideWidth = slideWidth / params.slidesOnScreen;
 		}
 		sliderSlides.innerWidth(slideWidth);
-		const slideContainerWidth = slideCount * slideWidth;
-		let count = 1;
-
-		sliderContainer.css({
-			width: slideContainerWidth,
-			'margin-left': 0,
-			display: 'flex',
+		let slideContainerWidth = slideCount * slideWidth;
+		sliderContainer.css({ width: slideContainerWidth });
+		$(window).on('resize', function () {
+			clearTimeout(window.resFinished);
+			window.resFinished = setTimeout(function () {
+				slideWidth = mainContainer.width();
+				if (
+					params.slidesOnScreen > 1 &&
+					$(window).width() > params.offset
+				) {
+					slideWidth = slideWidth / params.slidesOnScreen;
+				}
+				sliderSlides.innerWidth(slideWidth);
+				slideContainerWidth = slideCount * slideWidth;
+				sliderContainer.css({ width: slideContainerWidth });
+				if (
+					!params.selector.visible() ||
+					slideContainerWidth <= mainContainer.width()
+				) {
+					clearInterval(interval);
+				} else if (
+					params.interval > 0 &&
+					params.interval !== false &&
+					slideContainerWidth > mainContainer.width() &&
+					params.selector.visible()
+				) {
+					clearInterval(interval);
+					interval = setInterval(moveRight, params.interval);
+				}
+			}, 100);
 		});
-
 		function moveLeft() {
 			lastSlide = sliderContainer.find('> div:last-child');
 			sliderContainer.stop().animate(
 				{
 					left: +slideWidth,
 				},
-				700,
+				params.speed,
 				function () {
 					lastSlide.prependTo(sliderContainer);
 					sliderContainer.css('left', '');
@@ -59,7 +85,7 @@ export function sliders(settings) {
 				{
 					left: -slideWidth,
 				},
-				700,
+				params.speed,
 				function () {
 					firstSlide.appendTo(sliderContainer);
 					sliderContainer.css('left', '');
@@ -85,28 +111,50 @@ export function sliders(settings) {
 				clicked = true;
 			});
 		}
-		if (
-			params.interval > 1 &&
-			params.interval !== false &&
-			params.slidesOnScreen < slideCount
-		) {
-			$(function () {
-				interval = setInterval(function () {
-					moveRight();
-				}, params.interval);
+
+		$(function () {
+			if (
+				params.interval > 0 &&
+				params.interval !== false &&
+				slideContainerWidth > mainContainer.width() &&
+				params.selector.visible() &&
+				clicked === false
+			) {
+				clearInterval(interval);
+				interval = setInterval(moveRight, params.interval);
 				params.selector.hover(
 					function () {
 						clearInterval(interval);
 					},
 					function () {
-						if (clicked === false) {
-							interval = setInterval(function () {
-								moveRight();
-							}, params.interval);
-						}
+						interval = setInterval(moveRight, params.interval);
 					},
 				);
-			});
-		}
+			}
+			let timer;
+			window.addEventListener(
+				'scroll',
+				function () {
+					if (timer !== null) {
+						clearTimeout(timer);
+					}
+					timer = setTimeout(function () {
+						if (!params.selector.visible() || clicked === true) {
+							clearInterval(interval);
+						} else if (
+							params.interval > 0 &&
+							params.interval !== false &&
+							slideContainerWidth > mainContainer.width() &&
+							params.selector.visible() &&
+							clicked === false
+						) {
+							clearInterval(interval);
+							interval = setInterval(moveRight, params.interval);
+						}
+					}, 100);
+				},
+				false,
+			);
+		});
 	}
 }
