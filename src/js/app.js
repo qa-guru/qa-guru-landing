@@ -32,7 +32,7 @@ $(window).on('load', function () {
 		slidesOnScreen: 2,
 		interval: sliderChangeDelay,
 		speed: sliderChangeSpeed,
-		offset: 1580,
+		offset: 1200,
 	});
 	itemsChange({
 		selector: $('.who-teach__container'),

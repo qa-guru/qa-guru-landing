@@ -32,8 +32,23 @@ export function itemsChange(settings) {
 			activeTitles = params.selector.find('.titles > div');
 		}
 		if (params.type === 2) {
+			const container = params.selector.find('.items');
 			titlesInit = params.selector.find('.top');
 			items = params.selector.find('.item');
+
+			container.css({ minHeight: 'unset' });
+			if ($(window).width() > 1200) {
+				let maxHeight = Math.max.apply(
+					null,
+					items
+						.map(function () {
+							return $(this).height();
+						})
+						.get(),
+				);
+				container.css({ minHeight: maxHeight });
+			}
+
 			$.each(items, function () {
 				const title = $(this).find('.item-title');
 				const titleHtml = title.html();

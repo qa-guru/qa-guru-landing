@@ -5,7 +5,12 @@
 		--margin-1: 20px;
 		--margin-2: 20px;
 	}
-	&__top,
+	@media (--lg-m) {
+		max-width: 720px;
+		margin: * auto;
+		margin-top: 2rem;
+	}
+&__top,
 	&__bottom {
 		display: flex;
 		justify-content: center;
@@ -46,6 +51,7 @@
 		}
 		@media (--sm) {
 			flex: 1 1 100%;
+			width: 100%;
 		}
 	}
 	&__left {

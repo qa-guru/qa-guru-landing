@@ -6,7 +6,7 @@
 @custom-media --lg (max-width: 1580px);
 @custom-media --lg-m (max-width: 1200px);
 @custom-media --md (max-width: 852px);
-@custom-media --sm (max-width: 480px);
+@custom-media --sm (max-width: 520px);
 
 :root {
 	--c: 1;

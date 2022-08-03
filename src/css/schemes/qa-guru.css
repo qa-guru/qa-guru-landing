@@ -10,4 +10,18 @@
 	--c-gray: #505153;
 	--shadow: 0px 1px 13px rgba(218, 219, 216, 0.35);
 	--transition: 0.25s ease-in;
+	--animation: 0.25s ease-in both;
+}
+@keyframes faq {
+	from {
+		margin-bottom: -100%;
+		opacity: 0;
+	}
+	50% {
+		opacity: 0;
+	}
+	to {
+		margin-bottom: 0;
+		opacity: 1;
+	}
 }

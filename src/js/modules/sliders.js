@@ -7,10 +7,11 @@ export function sliders(settings) {
 			speed: 1000,
 		};
 		$.extend(params, settings);
-		let interval;
-		let clicked = false;
+		let interval,
+			clicked = false,
+			play = false,
+			count = 1;
 		const mainContainer = $('.gc-main-content .lite-page .container-std');
-		let count = 1;
 
 		const sliderContainer = params.selector.find('.slides');
 		if (params.slidesOnScreen > 1) {
@@ -30,6 +31,7 @@ export function sliders(settings) {
 		sliderSlides.innerWidth(slideWidth);
 		let slideContainerWidth = slideCount * slideWidth;
 		sliderContainer.css({ width: slideContainerWidth });
+
 		$(window).on('resize', function () {
 			clearTimeout(window.resFinished);
 			window.resFinished = setTimeout(function () {
@@ -43,22 +45,26 @@ export function sliders(settings) {
 				sliderSlides.innerWidth(slideWidth);
 				slideContainerWidth = slideCount * slideWidth;
 				sliderContainer.css({ width: slideContainerWidth });
+				clearInterval(interval);
 				if (
-					!params.selector.visible() ||
-					slideContainerWidth <= mainContainer.width()
-				) {
-					clearInterval(interval);
-				} else if (
 					params.interval > 0 &&
 					params.interval !== false &&
 					slideContainerWidth > mainContainer.width() &&
-					params.selector.visible()
+					params.selector.visible() &&
+					clicked === false
 				) {
+					play = true;
 					clearInterval(interval);
-					interval = setInterval(moveRight, params.interval);
+					interval = setInterval(function () {
+						moveRight();
+					}, params.interval);
+				} else {
+					play = false;
+					clearInterval(interval);
 				}
 			}, 100);
 		});
+
 		function moveLeft() {
 			lastSlide = sliderContainer.find('> div:last-child');
 			sliderContainer.stop().animate(
@@ -103,12 +109,16 @@ export function sliders(settings) {
 			next.on('click', function () {
 				moveRight();
 				clicked = true;
+				play = false;
+				clearInterval(interval);
 			});
 		}
 		if (prev.length > 0) {
 			prev.on('click', function () {
 				moveLeft();
 				clicked = true;
+				play = false;
+				clearInterval(interval);
 			});
 		}
 
@@ -120,14 +130,23 @@ export function sliders(settings) {
 				params.selector.visible() &&
 				clicked === false
 			) {
+				play = true;
 				clearInterval(interval);
-				interval = setInterval(moveRight, params.interval);
+				interval = setInterval(function () {
+					moveRight();
+				}, params.interval);
 				params.selector.hover(
 					function () {
+						play = false;
 						clearInterval(interval);
 					},
 					function () {
-						interval = setInterval(moveRight, params.interval);
+						play = true;
+						if (clicked === false) {
+							interval = setInterval(function () {
+								moveRight();
+							}, params.interval);
+						}
 					},
 				);
 			}
@@ -135,21 +154,24 @@ export function sliders(settings) {
 			window.addEventListener(
 				'scroll',
 				function () {
-					if (timer !== null) {
-						clearTimeout(timer);
-					}
+					if (timer !== null) clearTimeout(timer);
 					timer = setTimeout(function () {
-						if (!params.selector.visible() || clicked === true) {
-							clearInterval(interval);
-						} else if (
+						clearInterval(interval);
+						if (
 							params.interval > 0 &&
 							params.interval !== false &&
 							slideContainerWidth > mainContainer.width() &&
 							params.selector.visible() &&
 							clicked === false
 						) {
+							play = true;
 							clearInterval(interval);
-							interval = setInterval(moveRight, params.interval);
+							interval = setInterval(function () {
+								moveRight();
+							}, params.interval);
+						} else {
+							play = false;
+							clearInterval(interval);
 						}
 					}, 100);
 				},

@@ -82,7 +82,7 @@
 			padding: * var(--arrow-width);
 			gap: var(--inner-padding);
 			flex-wrap: wrap;
-			@media (--lg) {
+			@media (--lg-m) {
 				gap: 2rem;
 			}
 			@media (--sm) {
@@ -90,12 +90,15 @@
 			}
 			> div {
 				flex: 0 0 calc(50% - var(--inner-padding) / 2);
-				@media (--lg) {
+				@media (--lg-m) {
 					flex: 1 1 100%;
+					&.description {
+						margin-top: 1rem;
+					}
 				}
 				&.left {
 					padding-left: var(--inner-padding);
-					@media (--lg) {
+					@media (--lg-m) {
 						padding-left: 3rem;
 					}
 				}
@@ -105,7 +108,7 @@
 					align-items: center;
 					justify-content: center;
 					position: relative;
-					@media (--lg) {
+					@media (--lg-m) {
 						flex: 0 1 60%;
 						margin: * auto;
 					}
@@ -133,6 +136,17 @@
 					flex-direction: row;
 					gap: 0;
 					margin-left: var(--arrow-width);
+				}
+				@media (--lg-m) {
+					flex-wrap: wrap;
+				}
+				.option {
+					@media (--lg) {
+						margin-top: 1rem;
+					}
+					@media (--lg-m) {
+						flex: 1 1 100%;
+					}
 				}
 			}
 		}
