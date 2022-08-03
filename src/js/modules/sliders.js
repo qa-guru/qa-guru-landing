@@ -25,7 +25,7 @@ export function sliders(settings) {
 		const counter = params.selector.find('.counter');
 		const slideCount = sliderSlides.length;
 		let slideWidth = mainContainer.width();
-		if (params.slidesOnScreen > 1 && $(window).width() > params.offset) {
+		if (params.slidesOnScreen > 1 && window.innerWidth > params.offset) {
 			slideWidth = slideWidth / params.slidesOnScreen;
 		}
 		sliderSlides.innerWidth(slideWidth);
@@ -38,7 +38,7 @@ export function sliders(settings) {
 				slideWidth = mainContainer.width();
 				if (
 					params.slidesOnScreen > 1 &&
-					$(window).width() > params.offset
+					window.innerWidth > params.offset
 				) {
 					slideWidth = slideWidth / params.slidesOnScreen;
 				}

@@ -2,6 +2,9 @@
 	position: relative;
 	width: 100%;
 	overflow: hidden;
+	@media (--md) {
+		--arrow-width: 40px;
+	}
 	&__controls {
 		position: absolute;
 		width: 100%;
@@ -62,7 +65,7 @@
 		left: var(--arrow-width);
 		z-index: 2;
 		top: 0;
-		@media (--sm) {
+		@media (--md) {
 			display: none;
 		}
 	}
@@ -131,7 +134,7 @@
 				width: calc((100vw - var(--side-padding) * 2) / 2);
 				flex-direction: column;
 				gap: 2rem;
-				@media (--lg) {
+				@media (--lg-m) {
 					width: 100%;
 					flex-direction: row;
 					gap: 0;
@@ -141,7 +144,7 @@
 					flex-wrap: wrap;
 				}
 				.option {
-					@media (--lg) {
+					@media (--lg-m) {
 						margin-top: 1rem;
 					}
 					@media (--lg-m) {

@@ -31,10 +31,14 @@ export function showCourseMore() {
 }
 
 // Размер заголовков
-export function headerSize() {
+export function headerSize(settings) {
+	let params = {
+		offset: 1199,
+	};
+	$.extend(params, settings);
 	const headers = $('.this-course-for > div div h3');
 	headers.css({ minHeight: 'unset' });
-	if ($(window).width() > 1200) {
+	if (window.innerWidth > params.offset) {
 		let maxHeight = Math.max.apply(
 			null,
 			headers
@@ -48,7 +52,7 @@ export function headerSize() {
 	$(window).on('resize', function () {
 		clearTimeout(window.resizedFinished);
 		window.resizedFinished = setTimeout(function () {
-			if ($(window).width() > 1200) {
+			if (window.innerWidth > params.offset) {
 				let maxHeight = Math.max.apply(
 					null,
 					headers

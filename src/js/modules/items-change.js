@@ -5,6 +5,7 @@ export function itemsChange(settings) {
 			interval: 3000,
 			speed: 1000,
 			type: 1,
+			offset: 1199,
 		};
 		$.extend(params, settings);
 		let numbers,
@@ -37,7 +38,7 @@ export function itemsChange(settings) {
 			items = params.selector.find('.item');
 
 			container.css({ minHeight: 'unset' });
-			if ($(window).width() > 1200) {
+			if (window.innerWidth > params.offset) {
 				let maxHeight = Math.max.apply(
 					null,
 					items

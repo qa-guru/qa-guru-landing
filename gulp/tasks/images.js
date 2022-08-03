@@ -42,18 +42,18 @@ export const images = () => {
 					})
 				)
 			)
-			.pipe(
-				app.plugins.if(
-					app.isBuild,
-					sharpResponsive({
-						includeOriginalFile: true,
-						formats: [
-							{ width: 640, rename: { suffix: '-sm' } },
-							{ width: 1024, rename: { suffix: '-lg' } },
-						],
-					})
-				)
-			)
+			// .pipe(
+			// 	app.plugins.if(
+			// 		app.isBuild,
+			// 		sharpResponsive({
+			// 			includeOriginalFile: true,
+			// 			formats: [
+			// 				{ width: 640, rename: { suffix: '-sm' } },
+			// 				{ width: 1024, rename: { suffix: '-lg' } },
+			// 			],
+			// 		})
+			// 	)
+			// )
 			.pipe(app.gulp.dest(app.path.build.images))
 			.pipe(app.gulp.src(app.path.src.svg))
 			.pipe(app.gulp.dest(app.path.build.images))

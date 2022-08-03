@@ -335,13 +335,13 @@
 			div {
 				&:nth-child(1) {
 					flex: 0 0 30%;
-					@media (--lg) {
+					@media (--lg-m) {
 						flex: 1 0 100%;
 					}
 				}
 				&:nth-child(2) {
 					flex: 1 1;
-					@media (--lg) {
+					@media (--lg-m) {
 						flex: 1 0 100%;
 					}
 					svg {
@@ -730,7 +730,7 @@
 		position: relative;
 		&__container {
 			position: relative;
-			@media (--lg) {
+			@media (--lg-m) {
 				display: flex;
 				gap: 3rem;
 				align-items: flex-start;
@@ -740,14 +740,14 @@
 				align-items: stretch;
 				justify-content: space-around;
 				height: 104px;
-				@media (--lg) {
+				@media (--lg-m) {
 					flex-direction: column;
 					height: unset;
 					align-items: flex-start;
 					flex: 1 1 20%;
 					gap: 1rem;
 				}
-				@media (--lg-m) {
+				@media (--sm) {
 					display: none;
 				}
 				&__item {
@@ -759,7 +759,7 @@
 					padding: * 0.5rem;
 					transition: var(--transition);
 					transition-property: color, border-color;
-					@media (--lg) {
+					@media (--lg-m) {
 						border-bottom: none;
 						text-align: left;
 						flex: 0 1;
@@ -770,7 +770,7 @@
 						border-color: var(--c-brand);
 						flex: 1 1 12%;
 						transition: all var(--transition);
-						@media (--lg) {
+						@media (--lg-m) {
 							flex: 0 1;
 						}
 					}
@@ -784,11 +784,11 @@
 			.items {
 				position: relative;
 				margin-top: var(--inner-padding);
-				@media (--lg) {
+				@media (--lg-m) {
 					margin-top: 0;
 					flex: 1 1 80%;
 				}
-				@media (--lg-m) {
+				@media (--sm) {
 					display: flex;
 					flex-direction: column;
 					gap: 4rem;
@@ -802,7 +802,7 @@
 					display: flex;
 					gap: 4rem;
 					max-width: 100%;
-					@media (--lg-m) {
+					@media (--sm) {
 						position: relative;
 						transform: translateX(0);
 						width: 100%;
@@ -830,7 +830,7 @@
 					.item-title {
 						margin-bottom: 2rem;
 					}
-					@media (--lg) {
+					@media (--lg-m) {
 						.left {
 						}
 					}
@@ -849,7 +849,7 @@
 			@media (--lg) {
 				gap: 20px;
 			}
-			@media (--sm) {
+			@media (--md) {
 				flex-direction: column;
 				gap: 0;
 			}
@@ -862,20 +862,20 @@
 				display: flex;
 				flex-direction: column;
 				justify-content: center;
-				@media (--sm) {
+				@media (--md) {
 					min-height: unset;
 				}
 			}
 			&__number {
 				flex: 0 0 2rem;
 				text-align: right;
-				@media (--sm) {
+				@media (--md) {
 					display: none;
 				}
 			}
 			&__title {
 				flex: 0 0 25%;
-				@media (--sm) {
+				@media (--md) {
 					font-weight: 600;
 					font-size: 1.3888rem;
 					line-height: 1.36;
@@ -890,7 +890,7 @@
 				transition: var(--transition);
 				transition-property: transform;
 				padding-top: 1rem;
-				@media (--sm) {
+				@media (--md) {
 					position: static;
 					transform: translateX(0);
 					padding-top: 0;
@@ -905,14 +905,14 @@
 					font-size: 1rem;
 					transform: translateX(0);
 				}
-				@media (--sm) {
+				@media (--md) {
 					font-size: 1rem;
 					color: var(--c-black);
 				}
 			}
 			&:not(.active) {
 				cursor: pointer;
-				@media (--sm) {
+				@media (--md) {
 					cursor: auto;
 				}
 			}
@@ -923,7 +923,7 @@
 			bottom: 0;
 			left: calc(28% + var(--inner-padding));
 			width: calc(100% - (28% + var(--inner-padding)));
-			@media (--sm) {
+			@media (--md) {
 				display: none;
 			}
 		}
@@ -1164,7 +1164,7 @@
 			h3 {
 				color: var(--c-black);
 				transition: color var(--transition);
-				@media (--md) {
+				@media (--lg-m) {
 					overflow: hidden;
 					-webkit-line-clamp: 1;
 					display: -webkit-box;
@@ -1229,12 +1229,14 @@
 	color: var(--c-white) var(--c-black);
 	margin: * var(--side-padding);
 	width: calc(100% - var(--side-padding) * 2);
+	margin-bottom: 0;
 	@media (--lg) {
 		margin: * 0;
 		width: 100%;
 	}
 	@media (--sm) {
 		padding: 48px var(--side-padding);
+		margin-bottom: var(--side-padding);
 	}
 	.container {
 		padding: 0;

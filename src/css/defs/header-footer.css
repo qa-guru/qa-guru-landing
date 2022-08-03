@@ -36,7 +36,7 @@
 			}
 		}
 		&__menu {
-			@media (--sm) {
+			@media (--md) {
 				display: none;
 			}
 			margin: 0;
@@ -66,8 +66,9 @@
 			gap: 0.666em;
 		}
 	}
-	@media (--sm) {
-		.main-footer {
+	.main-footer {
+		margin-bottom: 0;
+		@media (--sm) {
 			flex-direction: column;
 			margin-bottom: 2rem;
 			height: unset;
