@@ -49,6 +49,10 @@ export function itemsChange(settings) {
 				);
 				container.css({ minHeight: maxHeight });
 			}
+			if (window.innerWidth < params.offset && window.innerWidth > 519) {
+				let itemHeight = items.eq(count).height();
+				params.selector.css({ minHeight: itemHeight });
+			}
 
 			$.each(items, function () {
 				const title = $(this).find('.item-title');
@@ -93,6 +97,14 @@ export function itemsChange(settings) {
 					activeTitles.eq(count).addClass('active');
 			if (items)
 				items.removeClass('active'), items.eq(count).addClass('active');
+			if (
+				params.type === 2 &&
+				window.innerWidth < params.offset &&
+				window.innerWidth > 519
+			) {
+				let itemHeight = items.eq(count).height();
+				params.selector.css({ minHeight: itemHeight });
+			}
 		}
 
 		$(function () {

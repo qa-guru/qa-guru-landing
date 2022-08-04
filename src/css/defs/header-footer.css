@@ -13,6 +13,18 @@
 	.main-footer {
 		background: var(--c-white);
 	}
+
+	--header-height: calc(7.8888rem * var(--c));
+	@media (--lg-m) {
+		--header-height: calc(6.5rem * var(--c));
+	}
+	@media (--md) {
+		--header-height: calc(6rem * var(--c));
+	}
+	@media (--sm) {
+		--header-height: calc(5rem * var(--c));
+	}
+
 	.main-header,
 	.main-footer {
 		display: flex;
@@ -21,7 +33,7 @@
 		gap: calc(2.77rem * var(--c));
 		align-items: center;
 		line-height: 1;
-		height: calc(7.8888rem * var(--c));
+		height: var(--header-height);
 		padding: 0 var(--side-padding);
 
 		&__logo {
@@ -66,6 +78,18 @@
 			gap: 0.666em;
 		}
 	}
+
+	/* fixed header */
+	.lt-block-wrapper .container-std.start-block {
+		margin-top: calc(var(--header-height) + 1rem);
+	}
+	.main-header {
+		position: fixed;
+		width: 100%;
+		z-index: 50;
+		background: var(--c-white);
+	}
+
 	.main-footer {
 		margin-bottom: 0;
 		@media (--sm) {

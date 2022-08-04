@@ -12,6 +12,9 @@
 		gap: 0.5em;
 		width: fit-content;
 	}
+	a.show-programm-btn {
+		cursor: pointer;
+	}
 	a.button,
 	button,
 	.btn.f-btn.button-md {
@@ -25,6 +28,7 @@
 		min-height: unset;
 		font-size: 1rem;
 		font-weight: 400;
+		cursor: pointer;
 		&:hover {
 			color: var(--c-black) var(--c-brand) !important;
 		}
@@ -698,6 +702,7 @@
 					}
 					.left {
 						flex: 0 0 calc(100% / 3 - var(--gap) / 2);
+						max-width: 240px;
 						@media (--lg) {
 							flex: 0 1 50%;
 						}
@@ -744,7 +749,7 @@
 					flex-direction: column;
 					height: unset;
 					align-items: flex-start;
-					flex: 1 1 20%;
+					flex: 1 1 33%;
 					gap: 1rem;
 				}
 				@media (--sm) {
@@ -800,25 +805,30 @@
 					transform: translateX(100vw);
 					position: absolute;
 					display: flex;
-					gap: 4rem;
+					gap: 6rem;
 					max-width: 100%;
+					@media (--lg-m) {
+						gap: 3rem;
+						flex-direction: column;
+					}
 					@media (--sm) {
 						position: relative;
 						transform: translateX(0);
 						width: 100%;
-					}
-					@media (--sm) {
 						flex-direction: column;
 					}
 					.left {
-						flex: 0 0 calc(40% - 2rem);
+						flex: 0 0 calc(33% - 3rem);
 						img {
 							object-fit: contain;
 							size: 100%;
 						}
+						@media (--lg-m) {
+							max-width:300px;
+						}
 					}
 					.right {
-						flex: 0 0 calc(60% - 2rem);
+						flex: 0 0 calc(67% - 3rem);
 						max-width: 100%;
 						> * {
 							width: 100%;
