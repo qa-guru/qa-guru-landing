@@ -18,6 +18,7 @@ const sliderChangeDelay = 5000;
 const sliderChangeSpeed = 1000;
 
 $(window).on('load', function () {
+	functions.icons();
 	functions.showProgramm();
 	functions.showCourseMore();
 	functions.headerSize({ offset: 1199 });
@@ -56,4 +57,12 @@ $(window).on('load', function () {
 	functions.career();
 	functions.faq();
 	functions.gcForm();
+});
+
+$(window).on('resize', function () {
+	clearTimeout(window.resizeFinish);
+	window.resizeFinish = setTimeout(function () {
+		// действия при ресайзе окна:
+		functions.icons();
+	}, 100);
 });

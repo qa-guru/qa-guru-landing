@@ -30,6 +30,22 @@ export function showCourseMore() {
 	});
 }
 
+export function icons() {
+	const svg = $('.start-composition__right');
+	const icons = $('.start-composition .icons');
+	let svgWigth = svg.width();
+	let svgHeight = svg.height();
+	let position = svg.position();
+	svg.addClass('loaded');
+	icons.css({
+		width: svgWigth,
+		height: svgHeight,
+		display: 'flex',
+		left: position.left + 'px',
+		fontSize: svgWigth / 30 + 'px',
+	});
+}
+
 // Размер заголовков
 export function headerSize(settings) {
 	let params = {
