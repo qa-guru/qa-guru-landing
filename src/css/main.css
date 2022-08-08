@@ -818,7 +818,7 @@
 						flex-direction: column;
 					}
 					.left {
-						flex: 0 0 calc(33% - 3rem);
+						flex: 0 0 calc(30% - 3rem);
 						img {
 							object-fit: contain;
 							size: 100%;
@@ -828,7 +828,7 @@
 						}
 					}
 					.right {
-						flex: 0 0 calc(67% - 3rem);
+						flex: 0 0 calc(70% - 3rem);
 						max-width: 100%;
 						> * {
 							width: 100%;

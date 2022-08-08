@@ -37,6 +37,9 @@
 		padding: 0 var(--side-padding);
 
 		&__logo {
+			gap: 0.5rem;
+			display: flex;
+			flex-direction: column;
 			a {
 				display: flex;
 				align-items: center;
