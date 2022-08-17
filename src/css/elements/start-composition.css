@@ -166,6 +166,14 @@
 					opacity: 1;
 				}
 			}
+			@media (--sm) {
+				&:nth-child(4n) {
+					span {
+						left: unset;
+						right: 0;
+					}
+				}
+			}
 		}
 		img {
 			width: 40px;

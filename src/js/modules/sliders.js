@@ -173,6 +173,10 @@ export function sliders(settings) {
 							play = false;
 							clearInterval(interval);
 						}
+						if (window.innerWidth < params.offset) {
+							play = true;
+							clicked === false;
+						}
 					}, 100);
 				},
 				false,

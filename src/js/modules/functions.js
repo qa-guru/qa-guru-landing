@@ -1,3 +1,13 @@
+// Мобильное меню
+export function mobileMenuShow() {
+	const mobileBtn = $('.main-header__button');
+	const mobileMenu = $('.main-header');
+	$(mobileMenuShow).on('click', function () {
+		mobileBtn.toggleClass('active');
+		mobileMenu.toggleClass('active');
+	});
+}
+
 // Показать программу
 export function showProgramm() {
 	$('.programm-full-list').append('<div class="close-btn">×</div>');
@@ -42,6 +52,7 @@ export function icons() {
 		height: svgHeight,
 		display: 'flex',
 		left: position.left + 'px',
+		top: position.top + 'px',
 		fontSize: svgWigth / 30 + 'px',
 	});
 }

@@ -38,13 +38,13 @@
 		--block-indents: calc(120px * var(--f));
 	}
 	@media (--md) {
-		--side-padding: 32px;
+		--side-padding: 18px;
 		--inner-padding: calc(80px * var(--c));
 		--content-indents: calc(40px * var(--c));
 		--block-indents: calc(100px * var(--f));
+		--font-size: 12px;
 	}
 	@media (--sm) {
-		--side-padding: 24px;
 		--block-indents: calc(50px * var(--f));
 	}
 }

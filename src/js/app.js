@@ -16,12 +16,14 @@ import { itemsChange } from './modules/items-change.js';
 
 const sliderChangeDelay = 5000;
 const sliderChangeSpeed = 1000;
+const offset = 1199;
 
 $(window).on('load', function () {
+	functions.mobileMenuShow();
 	functions.icons();
 	functions.showProgramm();
 	functions.showCourseMore();
-	functions.headerSize({ offset: 1199 });
+	functions.headerSize({ offset: offset });
 	sliders({
 		selector: $('.qa-slider#what_ull_learn'),
 		slidesOnScreen: 1,
@@ -33,7 +35,7 @@ $(window).on('load', function () {
 		slidesOnScreen: 2,
 		interval: sliderChangeDelay,
 		speed: sliderChangeSpeed,
-		offset: 1199,
+		offset: offset,
 	});
 	itemsChange({
 		selector: $('.who-teach__container'),
@@ -46,7 +48,7 @@ $(window).on('load', function () {
 		interval: sliderChangeDelay,
 		speed: sliderChangeSpeed,
 		type: 2,
-		offset: 1199,
+		offset: offset,
 	});
 	itemsChange({
 		selector: $('.course-program__container'),
