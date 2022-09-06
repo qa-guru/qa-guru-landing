@@ -1,10 +1,9 @@
 // Мобильное меню
 export function mobileMenuShow() {
-	const mobileBtn = $('.main-header__button');
-	const mobileMenu = $('.main-header');
-	$(mobileMenuShow).on('click', function () {
-		mobileBtn.toggleClass('active');
-		mobileMenu.toggleClass('active');
+	const mobileBtn = $('#qa_header_custom_header .main-header__button');
+	const mobileMenu = $('#qa_header_custom_header');
+	$(mobileBtn).on('click', function () {
+		mobileBtn.add(mobileMenu).toggleClass('active');
 	});
 }
 

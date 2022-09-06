@@ -824,7 +824,7 @@
 							size: 100%;
 						}
 						@media (--lg-m) {
-							max-width:300px;
+							max-width: 300px;
 						}
 					}
 					.right {
@@ -845,6 +845,38 @@
 						}
 					}
 				}
+			}
+		}
+	}
+	.our-mentors {
+		&__container {
+			overflow-x: clip;
+			.content {
+				position: relative;
+				z-index: 1;
+				width: 100%;
+				height: auto;
+				display: flex;
+				.item {
+					padding-left: 0;
+					padding-right: 0;
+					background: var(--c-white);
+					border: 1px solid var(--c-black);
+					margin-right: var(--arrow-width);
+					padding: 66px 38px 56px 18px;
+					position: relative;
+				}
+			}
+			.controls {
+				position: absolute;
+				width: 100%;
+				top: 50%;
+				transform: translateY(-50%);
+				z-index: 2;
+				pointer-events: none;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
 			}
 		}
 	}

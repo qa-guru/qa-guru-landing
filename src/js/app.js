@@ -37,6 +37,20 @@ $(window).on('load', function () {
 		speed: sliderChangeSpeed,
 		offset: offset,
 	});
+	sliders({
+		selector: $('.qa-slider#slider_reviews'),
+		slidesOnScreen: 2,
+		interval: sliderChangeDelay,
+		speed: sliderChangeSpeed,
+		offset: offset,
+	});
+	sliders({
+		selector: $('.qa-slider#slider_mentors'),
+		slidesOnScreen: 3,
+		interval: sliderChangeDelay,
+		speed: sliderChangeSpeed,
+		offset: offset,
+	});
 	itemsChange({
 		selector: $('.who-teach__container'),
 		interval: sliderChangeDelay,
