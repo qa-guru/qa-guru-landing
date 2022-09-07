@@ -107,6 +107,22 @@ export function career() {
 	});
 }
 
+// TELEGRAM POSTS
+export function telegramPosts() {
+	$('#slider_reviews .qa-slider__slides > div').each(function () {
+		const height = $(this).find('.tgme_widget_message_text').height();
+		if (height > 350) {
+			$(this).addClass('has-more-text');
+			$(this).append(`<div class="read-more"></div>`);
+		}
+	});
+	$('#slider_reviews .qa-slider__slides .has-more-text .read-more').click(
+		function () {
+			$(this).parent().toggleClass('reading');
+		},
+	);
+}
+
 // FAQ
 export function faq() {
 	const items = $('.faq__container').find('>div');
@@ -121,4 +137,15 @@ export function faq() {
 export function gcForm() {
 	const title = `<h3>Записаться на вводное занятие 18-го мая 2022</h3><p>После заполнения формы вам придёт письмо с инструкциями для посещения вводного урока и  ссылка на чат школы</p>`;
 	$('.form-forms .container').prepend(title);
+}
+
+// GC PRICE
+export function gcPrice() {
+	$('.gc-main-content .lite-page .course-price .row').prepend(`<h2 class="block-title">Сколько стоит курс?</h2>`);
+	$('.gc-main-content .lite-page .course-price .lt-tsr-content').each(
+		function () {
+			const price = $(this).find('.f-price');
+			$(this).find('.button').prepend(price);
+		},
+	);
 }

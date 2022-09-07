@@ -1,8 +1,8 @@
 'use strict';
 
 // for dev
-import jQuery from 'jquery';
-window.$ = window.jQuery = jQuery;
+// import jQuery from 'jquery';
+// window.$ = window.jQuery = jQuery;
 
 // import { jQueryWait } from './modules/jquery.wait.js';
 // jQueryWait();
@@ -72,7 +72,9 @@ $(window).on('load', function () {
 	});
 	functions.career();
 	functions.faq();
+	functions.telegramPosts();
 	functions.gcForm();
+	functions.gcPrice();
 });
 
 $(window).on('resize', function () {

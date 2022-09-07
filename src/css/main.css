@@ -1060,6 +1060,57 @@
 				}
 			}
 		}
+
+		/* Get Course Variant */
+		background: var(--c-black);
+		.block-title {
+			color: var(--c-white);
+		}
+		.flex-row {
+			display: flex;
+			gap: var(--gap);
+			flex-wrap: nowrap;
+			align-items: stretch;
+			@media (--lg-m) {
+				flex-direction: column;
+			}
+			.flex-column {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+		.lt-tsr-content {
+			text-align: left;
+			font-size: 1.2rem;
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			justify-content: space-between;
+			.button {
+				display: flex;
+				justify-content: center;
+			}
+			.btn.f-btn.button-md {
+				background-color: var(--c-brand) !important;
+				color: var(--c-black) !important;
+			}
+		}
+		.lt-tsr-block .description {
+			background-color: var(--c-white);
+			color: var(--c-black);
+			padding: var(--padding-wrapper);
+			flex: 1;
+			position: relative;
+		}
+		.price {
+			padding: calc(10px * var(--c)) calc(24px * var(--c));
+			background-color: var(--c-white);
+			color: var(--c-black);
+			margin-right: 1px;
+			text-align: center;
+			font-size: 1rem;
+		}
 	}
 	.career {
 		.f {

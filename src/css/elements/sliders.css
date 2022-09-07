@@ -28,8 +28,10 @@
 			display: none;
 		}
 	}
-	&#slider_vacancies, &#slider_reviews {
-		overflow: visible;
+
+	&#slider_vacancies,
+	&#slider_reviews {
+		padding-bottom: 54px;
 		@media (--lg) {
 			overflow-x: clip;
 		}

@@ -13,6 +13,7 @@
 @import 'elements/start-composition';
 @import 'elements/programm-full-list';
 @import 'elements/sliders';
+@import 'elements/telegram-msg';
 
 /* @tailwind base;
 @tailwind components;

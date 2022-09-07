@@ -1,0 +1,64 @@
+#slider_reviews .qa-slider__slides {
+	.tgme_widget_message_bubble_logo,
+	.tgme_widget_message_bubble_tail {
+		display: none;
+	}
+	.tgme_widget_message_author {
+		font-weight: 600;
+	}
+	a.tgme_widget_message_forwarded_from_name {
+		color: var(--c-brand);
+	}
+	.tgme_widget_message_text {
+		margin: 1rem *;
+		font-size: 0.85rem;
+		margin-bottom: 1rem;
+		margin-top: 1rem;
+		a {
+			color: var(--c-brand);
+		}
+	}
+	.tgme_widget_message_footer {
+		display: flex;
+		justify-content: space-between;
+		a {
+			color: var(--c-brand);
+		}
+		.tgme_widget_message_views,
+		.copyonly {
+			display: none;
+		}
+	}
+	.has-more-text {
+		position: relative;
+		.read-more {
+			cursor: pointer;
+			position: absolute;
+			bottom: 1rem;
+			left: center;
+			&:after {
+				content: 'Читать дальше';
+			}
+		}
+		.tgme_widget_message_text {
+			max-height: 20em;
+			overflow: hidden;
+			-webkit-line-clamp: 12;
+			display: box;
+			display: -webkit-box;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
+		}
+		&.reading {
+			.tgme_widget_message_text {
+				max-height: unset;
+				-webkit-line-clamp: unset;
+			}
+			.read-more {
+				&:after {
+					content: 'Свернуть';
+				}
+			}
+		}
+	}
+}
