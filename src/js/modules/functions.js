@@ -2,8 +2,12 @@
 export function mobileMenuShow() {
 	const mobileBtn = $('#qa_header_custom_header .main-header__button');
 	const mobileMenu = $('#qa_header_custom_header');
+	const mobileMenuLink = $('#qa_header_custom_header menu a');
 	$(mobileBtn).on('click', function () {
 		mobileBtn.add(mobileMenu).toggleClass('active');
+	});
+	$(mobileMenuLink).on('click', function () {
+		mobileBtn.add(mobileMenu).removeClass('active');
 	});
 }
 
@@ -141,7 +145,10 @@ export function gcForm() {
 
 // GC PRICE
 export function gcPrice() {
-	$('.gc-main-content .lite-page .course-price .row').prepend(`<h2 class="block-title">Сколько стоит курс?</h2>`);
+	$('.gc-main-content .lite-page .course-price').attr('id', 'course_price');
+	$('.gc-main-content .lite-page .course-price .row').prepend(
+		`<h2 class="block-title">Сколько стоит курс?</h2>`,
+	);
 	$('.gc-main-content .lite-page .course-price .lt-tsr-content').each(
 		function () {
 			const price = $(this).find('.f-price');

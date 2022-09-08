@@ -63,6 +63,12 @@
 				list-style-type: none;
 				padding-inline-start: 0;
 				gap: calc(2.77rem * var(--c));
+				li:last-child {
+					display: none;
+					@media (--md) {
+						display: block;
+					}
+				}
 			}
 			a {
 				padding: 0.55em 0;

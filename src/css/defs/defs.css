@@ -16,7 +16,7 @@
 	--f: 1;
 
 	/* for getcouse */
-	--f: 0.5;
+	/* --f: 0.5; */
 
 	--side-padding: 204px;
 	--content-indents: calc(52px * var(--c));
