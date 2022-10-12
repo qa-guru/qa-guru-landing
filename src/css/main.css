@@ -2,6 +2,12 @@
 	svg {
 		height: auto;
 	}
+	.mobile-only {
+		display: none;
+		@media (--sm) {
+			display: block;
+		}
+	}
 	/* Buttons */
 	a.button,
 	a.has-arrow,
@@ -87,7 +93,7 @@
 		font-size: 2.888rem;
 		line-height: 1.3461;
 		@media (--sm) {
-			font-size: 1.8rem;
+			font-size: 2rem;
 		}
 	}
 	/* Заголовок 1 */
@@ -136,10 +142,20 @@
 	.block-title {
 		margin-bottom: 5.555rem;
 		@media (--sm) {
-			margin-bottom: 3rem;
+			margin: 1.5rem *;
+			margin-left: 25%;
+			line-height: 1.5;
+			font-size: 1.7rem;
+			position: relative;
+			.points {
+				color: var(--c-brand);
+				display: inline-flex;
+				position: absolute;
+				left: calc(-25% - 0.85em);
+				top: 0.5em;
+			}
 		}
 	}
-
 	/* Lists */
 	.list {
 		&-start {
@@ -159,6 +175,80 @@
 					size: 25px;
 					background-color: var(--c-brand);
 					border-radius: 50%;
+				}
+			}
+			/* MOBILE VER */
+			@media (--sm) {
+				--block-right: 8px;
+				padding: 5rem 2rem;
+				position: relative;
+				overflow: visible;
+				z-index: 1;
+				margin-right: calc(var(--side-padding) * -1);
+				margin-left: var(--block-right);
+				&:before,
+				&:after {
+					clip-path: polygon(0 0, 100% 5%, 100% 95%, 0 100%);
+					position: absolute;
+					size: 100%;
+					left: 0;
+					top: 0;
+					display: block;
+					content: '';
+					background: var(--c-brand);
+					z-index: -1;
+				}
+				&:after {
+					clip-path: polygon(3% 0, 100% 5%, 100% 93%, 0 100%);
+					left: -10px;
+					top: var(--block-right);
+					background: var(--c-black);
+					z-index: -2;
+				}
+				.logo-wrapper {
+					position: absolute;
+					z-index: 2;
+					width: 140px;
+					right: 30px;
+					top: -17px;
+					padding: 6px 20px;
+					padding-top: 10px;
+					transform: rotate(-9deg);
+					&:before,
+					&:after {
+						position: absolute;
+						display: block;
+						content: '';
+						background: var(--c-black);
+						size: 100%;
+						z-index: -1;
+						left: 0;
+						top: 0;
+					}
+					&:before {
+						left: calc(var(--block-right) * -1);
+						top: var(--block-right);
+						background: var(--c-white);
+					}
+					svg {
+						position: relative;
+						z-index: 1;
+						.prefix__a {
+							fill: var(--c-brand);
+						}
+						.prefix__b {
+							fill: var(--c-white);
+						}
+					}
+				}
+				li {
+					line-height: 1.2;
+					font-size: 1.2rem;
+					&:before {
+						background: var(--c-white);
+						size: 15px;
+						border-radius: 15px;
+					}
 				}
 			}
 		}
@@ -347,6 +437,9 @@
 					flex: 1 1;
 					@media (--lg-m) {
 						flex: 1 0 100%;
+					}
+					@media (--sm) {
+						display: none;
 					}
 					svg {
 						.bg {
@@ -1087,6 +1180,7 @@
 			flex: 1;
 			flex-direction: column;
 			justify-content: space-between;
+			overflow: unset;
 			.button {
 				display: flex;
 				justify-content: center;
@@ -1212,6 +1306,7 @@
 			--left-side: calc(27px * var(--c));
 			--right-side: calc(40px * var(--c));
 			--up-bot: calc(5px * var(--c));
+			padding-left: calc(var(--left-side) + 12px);
 		}
 		&__container {
 			display: flex;
@@ -1316,7 +1411,7 @@
 		}
 	}
 }
-.form-forms {
+.forms-new {
 	padding: 48px var(--inner-padding);
 	margin-bottom: var(--block-indents);
 	color: var(--c-white) var(--c-black);
@@ -1338,18 +1433,19 @@
 		}
 	}
 	.form-content {
-		margin-top: 1.5rem;
 		.builder {
 			display: flex;
 			align-items: stretch;
 			justify-content: space-between;
-			gap: 2.77rem;
+			flex-wrap: wrap;
+			gap: 1.4rem;
 			@media (--lg-m) {
 				flex-direction: column;
 			}
 			&-item {
 				margin-bottom: 0 !important;
-				display: none;
+				flex: 1 1 100%;
+				/* display: none; */
 				.f-input {
 					border: none;
 					color: black;
@@ -1365,6 +1461,21 @@
 					flex: 1;
 				}
 			}
+			.f-header p {
+				font-weight: 600;
+				font-size: 1.3888rem;
+				line-height: 1.36;
+				font-family: 'Montserrat', sans-serif;
+			}
+			.f-subheader p {
+				font-weight: 400;
+				font-size: 16px;
+				line-height: 1.666;
+				font-family: 'Montserrat', sans-serif;
+			}
+			.f-input {
+				font-family: 'Montserrat', sans-serif;
+			}
 			a.button,
 			button,
 			.btn.f-btn.button-md {
@@ -1372,6 +1483,7 @@
 				height: 2.77rem;
 				width: 100%;
 				justify-content: center;
+				font-family: 'Montserrat', sans-serif;
 			}
 		}
 	}

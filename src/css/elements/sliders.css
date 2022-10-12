@@ -25,7 +25,7 @@
 			width: var(--arrow-width);
 		}
 		@media (--sm) {
-			display: none;
+			/* display: none; */
 		}
 	}
 
@@ -34,6 +34,8 @@
 		padding-bottom: 54px;
 		@media (--lg) {
 			overflow-x: clip;
+		}
+		@media (--sm) {
 		}
 		.qa-slider__slides > div {
 			padding: * 0;
@@ -61,6 +63,19 @@
 		}
 		.qa-slider__controls {
 			justify-content: flex-end;
+		}
+	}
+	&#what_ull_learn {
+		@media (--sm) {
+			.qa-slider__controls {
+				display: flex;
+				justify-content: center;
+				top: unset;
+				bottom: 0;
+				.prev {
+					display: none;
+				}
+			}
 		}
 	}
 

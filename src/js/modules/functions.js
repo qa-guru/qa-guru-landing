@@ -3,11 +3,22 @@ export function mobileMenuShow() {
 	const mobileBtn = $('#qa_header_custom_header .main-header__button');
 	const mobileMenu = $('#qa_header_custom_header');
 	const mobileMenuLink = $('#qa_header_custom_header menu a');
+	const logoLink = $('#qa_header_custom_header .main-header__logo');
 	$(mobileBtn).on('click', function () {
 		mobileBtn.add(mobileMenu).toggleClass('active');
 	});
 	$(mobileMenuLink).on('click', function () {
 		mobileBtn.add(mobileMenu).removeClass('active');
+	});
+	$(logoLink).on('click', function () {
+		mobileBtn.add(mobileMenu).removeClass('active');
+	});
+}
+// Точки у заголовков моб
+export function mobileHeaders() {
+	const svg = `<svg class="points mobile-only" width="41" height="9" xmlns="http://www.w3.org/2000/svg"><ellipse cx="4.404" cy="4.857" rx="4.064" ry="3.884" fill="currentColor"/><ellipse cx="20.662" cy="4.857" rx="4.064" ry="3.884" fill="currentColor"/><ellipse cx="36.916" cy="4.857" rx="4.064" ry="3.884" fill="currentColor"/></svg>`;
+	$('.block-title').each(function () {
+		$(this).prepend(svg);
 	});
 }
 
@@ -46,18 +57,20 @@ export function showCourseMore() {
 export function icons() {
 	const svg = $('.start-composition__right');
 	const icons = $('.start-composition .icons');
-	let svgWigth = svg.width();
-	let svgHeight = svg.height();
-	let position = svg.position();
-	svg.addClass('loaded');
-	icons.css({
-		width: svgWigth,
-		height: svgHeight,
-		display: 'flex',
-		left: position.left + 'px',
-		top: position.top + 'px',
-		fontSize: svgWigth / 30 + 'px',
-	});
+	if (window.innerWidth > 519) {
+		let svgWigth = svg.width();
+		let svgHeight = svg.height();
+		let position = svg.position();
+		svg.addClass('loaded');
+		icons.css({
+			width: svgWigth,
+			height: svgHeight,
+			display: 'flex',
+			left: position.left + 'px',
+			top: position.top + 'px',
+			fontSize: svgWigth / 30 + 'px',
+		});
+	}
 }
 
 // Размер заголовков
@@ -135,12 +148,6 @@ export function faq() {
 		items.removeClass('active');
 		$(this).addClass('active');
 	});
-}
-
-// GC FORM
-export function gcForm() {
-	const title = `<h3>Записаться на вводное занятие 18-го мая 2022</h3><p>После заполнения формы вам придёт письмо с инструкциями для посещения вводного урока и  ссылка на чат школы</p>`;
-	$('.form-forms .container').prepend(title);
 }
 
 // GC PRICE

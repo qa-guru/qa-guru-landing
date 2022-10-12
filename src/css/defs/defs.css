@@ -77,6 +77,10 @@ body {
 	font-size: 1rem;
 	color: var(--c-black) var(--c-bg);
 	line-height: var(--line-height);
+	.lt-block {
+		max-width: 100%;
+		overflow-x: clip;
+	}
 	a,
 	a:focus,
 	a:active,

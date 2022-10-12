@@ -28,8 +28,11 @@ export function sliders(settings) {
 		if (params.slidesOnScreen > 1 && window.innerWidth > params.offset) {
 			slideWidth = slideWidth / params.slidesOnScreen;
 		}
-		sliderSlides.innerWidth(slideWidth);
 		let slideContainerWidth = slideCount * slideWidth;
+		if (params.arrow === 'right' && window.innerWidth < params.offset) {
+			sliderContainer.css({ gap: slideWidth * 0.25 });
+		}
+		sliderSlides.innerWidth(slideWidth);
 		sliderContainer.css({ width: slideContainerWidth });
 
 		$(window).on('resize', function () {

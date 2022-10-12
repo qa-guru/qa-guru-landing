@@ -1,8 +1,8 @@
 'use strict';
 
 // for dev
-// import jQuery from 'jquery';
-// window.$ = window.jQuery = jQuery;
+import jQuery from 'jquery';
+window.$ = window.jQuery = jQuery;
 
 // import { jQueryWait } from './modules/jquery.wait.js';
 // jQueryWait();
@@ -24,6 +24,7 @@ $(window).on('load', function () {
 	functions.showProgramm();
 	functions.showCourseMore();
 	functions.headerSize({ offset: offset });
+	functions.mobileHeaders();
 	sliders({
 		selector: $('.qa-slider#what_ull_learn'),
 		slidesOnScreen: 1,
@@ -36,6 +37,7 @@ $(window).on('load', function () {
 		interval: sliderChangeDelay,
 		speed: sliderChangeSpeed,
 		offset: offset,
+		arrow: 'right',
 	});
 	sliders({
 		selector: $('.qa-slider#slider_reviews'),
@@ -43,6 +45,7 @@ $(window).on('load', function () {
 		interval: sliderChangeDelay,
 		speed: sliderChangeSpeed,
 		offset: offset,
+		arrow: 'right',
 	});
 	sliders({
 		selector: $('.qa-slider#slider_mentors'),
@@ -73,7 +76,6 @@ $(window).on('load', function () {
 	functions.career();
 	functions.faq();
 	functions.telegramPosts();
-	functions.gcForm();
 	functions.gcPrice();
 });
 
