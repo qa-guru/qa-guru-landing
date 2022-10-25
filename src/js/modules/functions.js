@@ -28,6 +28,12 @@ export function showProgramm() {
 	$('.show-programm-btn').on('click', function () {
 		$('.programm-full-list').addClass('active');
 		$('body').addClass('modal-active');
+
+		gtag('event', 'send', {
+			event_category: 'Viewing_Detailed_Program',
+			event_label: 'record',
+		});
+		ym(64794919, 'reachGoal', 'Viewing_Detailed_Program');
 	});
 	$('.programm-full-list .close-btn').on('click', function () {
 		$('.programm-full-list').removeClass('active');
