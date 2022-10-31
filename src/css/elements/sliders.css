@@ -97,6 +97,9 @@
 				max-width: 100%;
 				height: auto;
 			}
+			h3 {
+				min-width: 100%;
+			}
 		}
 		.qa-slider__controls {
 			justify-content: flex-end;

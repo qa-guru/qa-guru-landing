@@ -248,6 +248,7 @@
 						background: var(--c-white);
 						size: 15px;
 						border-radius: 15px;
+						flex: 0 0 15px;
 					}
 				}
 			}
