@@ -87,6 +87,7 @@
 			}
 			a {
 				padding: 0.55em 0;
+				cursor: pointer;
 			}
 			@media (--md) {
 				position: fixed;

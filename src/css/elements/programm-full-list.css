@@ -5,6 +5,9 @@ body {
 }
 .gc-user-admin .programm-full-list {
 	display: none!important;
+	&.active {
+		display: block!important;
+	}
 }
 .gc-main-content .lite-page .programm-full-list {
 	position: fixed;
@@ -14,7 +17,7 @@ body {
 	background: var(--c-bg);
 	height: 100%;
 	&.active {
-		display: block;
+		display: block!important;
 	}
 	.close-btn {
 		position: fixed;

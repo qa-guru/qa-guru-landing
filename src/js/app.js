@@ -1,8 +1,8 @@
 'use strict';
 
 // for dev
-import jQuery from 'jquery';
-window.$ = window.jQuery = jQuery;
+// import jQuery from 'jquery';
+// window.$ = window.jQuery = jQuery;
 
 // import { jQueryWait } from './modules/jquery.wait.js';
 // jQueryWait();
