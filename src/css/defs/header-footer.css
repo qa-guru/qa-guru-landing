@@ -183,6 +183,9 @@
 	/* fixed header */
 	.lt-block-wrapper .container-std.start-block {
 		margin-top: calc(var(--header-height) + 1rem);
+		&.java-adv {
+			margin-top: calc(var(--header-height) + 3rem);
+		}
 		@media (--md) {
 			margin-top: calc(var(--header-height) + 3rem);
 		}

@@ -283,7 +283,11 @@
 		&-std {
 			padding: * var(--side-padding);
 			margin: var(--block-indents) *;
-			&.start-block {
+			@media (--xl) {
+				max-width: 1920px;
+				margin: * auto;
+			}
+				&.start-block {
 				margin-top: 1rem;
 				@media (--lg) {
 					margin-top: 4rem;
@@ -304,7 +308,12 @@
 			@media (--sm) {
 				display: none;
 			}
-		}
+			@media (--xl) {
+				max-width: 1920px;
+				margin: * auto;
+				padding: * calc(var(--side-padding) + 30px) * var(--side-padding);
+			}
+			}
 	}
 
 	.f {
@@ -404,6 +413,10 @@
 		padding: var(--inner-padding) *;
 		margin-left: var(--inner-padding);
 		padding-left: calc(var(--side-padding) - var(--inner-padding));
+		@media (--xl) {
+			max-width: calc(1920px - (var(--side-padding) * 2));
+			margin-left: auto;
+		}
 		@media (--lg) {
 			padding-left: calc(var(--side-padding));
 		}
@@ -1070,6 +1083,12 @@
 		--padding-wrapper: var(--padding-bottom) 36px;
 		--gap: 70px;
 		padding: var(--padding) *;
+		@media (--xl) {
+			.lt-block-wrapper {
+				max-width: 1920px;
+				margin: * auto;
+			}
+		}
 		&__container {
 			display: flex;
 			gap: var(--gap);
@@ -1428,6 +1447,10 @@
 		margin-bottom: var(--side-padding);
 	}
 	.container {
+		@media (--xl) {
+				max-width: calc(1920px - (var(--side-padding) * 2));
+				margin: * auto;
+		}
 		padding: 0;
 		h3 {
 			margin-bottom: 1.5rem;

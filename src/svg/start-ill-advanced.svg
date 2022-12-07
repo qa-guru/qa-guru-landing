@@ -1,0 +1,16 @@
+<svg class="start-composition__right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 761 512">
+	<defs>
+		<style>
+			.a {
+				fill: var(--c-white);
+				stroke: var(--c-black);
+				stroke-width: 3px;
+			}
+		</style>
+	</defs>
+	<path d="M16.52,1,724.86,37.05V464.33L0,512Z" />
+	<path class="a" d="M759.11,470.55,35.5,503.93V1.57L759.11,34.69Z" />
+	<circle cx="67" cy="24.7" r="5" />
+	<circle cx="92" cy="24.7" r="5" />
+	<circle cx="117" cy="24.7" r="5" />
+</svg>

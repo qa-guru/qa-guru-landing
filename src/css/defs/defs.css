@@ -6,6 +6,7 @@
 }
 
 /* Адаптивность */
+@custom-media --xl (min-width: 1920px);
 @custom-media --lg (max-width: 1580px);
 @custom-media --lg-m (max-width: 1199px);
 @custom-media --md (max-width: 851px);

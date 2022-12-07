@@ -53,6 +53,11 @@
 			width: 100%;
 		}
 	}
+	&.advanced {
+		svg {
+			flex: 0 0 100%;
+		}
+	}
 	&__left {
 		.white2 {
 			fill: none;
@@ -174,7 +179,8 @@
 				}
 			}
 			@media (--sm) {
-				&:nth-child(3n), &:nth-child(4n) {
+				&:nth-child(3n),
+				&:nth-child(4n) {
 					span {
 						left: unset;
 						right: 0;
@@ -201,6 +207,29 @@
 				}
 				p {
 					font-size: 0.75em;
+				}
+			}
+		}
+	}
+	&.advanced {
+		--icon-size: 60px;
+		.icons {
+			gap: 1rem;
+			padding: 3.5rem 4rem 3rem 6rem;
+			> div {
+				flex: 0 0 calc(20% - 1rem);
+				width: var(--icon-size);
+				img {
+					width: var(--icon-size);
+					height: 100%;
+					object-fit: contain;
+					flex: 0 0 var(--icon-size);
+				}
+				p {
+					font-size: 0.8rem;
+				}
+				span {
+					font-size: 0.8rem;
 				}
 			}
 		}

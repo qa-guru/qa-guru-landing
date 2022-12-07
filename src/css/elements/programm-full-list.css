@@ -46,6 +46,10 @@ body {
 		background: none;
 		padding: 0;
 		margin: var(--side-padding) 0;
+		@media (--xl) {
+			max-width: calc(1920px - (var(--side-padding) * 2));
+			margin: * auto;
+		}
 		@media (--lg) {
 			padding: 3rem;
 		}
