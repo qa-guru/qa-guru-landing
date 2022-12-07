@@ -24,6 +24,14 @@
 	@media (--md) {
 		--header-height: calc(5rem * var(--c));
 	}
+	#qa_header_custom_header.active {
+		@media (--md) {
+			.main-header__menu {
+				display: flex;
+				z-index: 10;
+			}
+		}
+	}
 
 	.main-header,
 	.main-footer {
@@ -106,13 +114,6 @@
 				}
 			}
 		}
-		&.active {
-			@media (--md) {
-				.main-header__menu {
-					display: flex;
-				}
-			}
-		}
 		&__button {
 			display: none;
 			position: fixed;
@@ -147,7 +148,7 @@
 				top: unset;
 				bottom: 0;
 			}
-			z-index: 2;
+			z-index: 11;
 			@media (--md) {
 				display: flex;
 				&.active {
